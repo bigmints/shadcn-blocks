@@ -3,6 +3,7 @@
 import {
     Sidebar,
     SidebarContent,
+    SidebarFooter,
     SidebarHeader,
     SidebarMenu,
     SidebarMenuButton,
@@ -27,7 +28,10 @@ import {
     CreditCard,
     Smartphone,
     Layers,
+    Github,
+    ExternalLink,
 } from "lucide-react";
+import packageJson from "@/package.json";
 
 const categories = [
     {
@@ -152,6 +156,41 @@ function AppSidebar() {
                     </SidebarGroup>
                 ))}
             </SidebarContent>
+            <SidebarFooter>
+                <div className="flex flex-col gap-2 px-2 py-3 text-xs text-muted-foreground">
+                    <div className="flex items-center gap-3">
+                        <a
+                            href="https://github.com/bigmints/shadcn-blocks"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
+                        >
+                            <Github className="size-3.5" />
+                            GitHub
+                        </a>
+                        <a
+                            href="https://ui.shadcn.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
+                        >
+                            <ExternalLink className="size-3" />
+                            shadcn/ui
+                        </a>
+                    </div>
+                    <div className="flex items-center justify-between">
+                        <a
+                            href="https://bigmints.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-foreground transition-colors"
+                        >
+                            bigmints.com
+                        </a>
+                        <span className="text-[10px] font-mono">v{packageJson.version}</span>
+                    </div>
+                </div>
+            </SidebarFooter>
         </Sidebar>
     );
 }
