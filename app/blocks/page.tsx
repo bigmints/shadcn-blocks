@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Github } from "lucide-react";
 import registryData from "@/registry.json";
 
 const categoryLabels: Record<string, string> = {
@@ -26,12 +27,23 @@ export default function BlocksIndex() {
 
     return (
         <div className="p-6 max-w-5xl mx-auto">
-            <div className="mb-8">
-                <h1 className="text-3xl font-bold tracking-tight">Mobile Blocks</h1>
-                <p className="text-muted-foreground mt-1">
-                    {registryData.items.length} production-ready mobile UI blocks built with shadcn/ui.
-                    Install any block with the shadcn CLI.
-                </p>
+            <div className="mb-8 flex items-start justify-between">
+                <div>
+                    <h1 className="text-3xl font-bold tracking-tight">Mobile Blocks</h1>
+                    <p className="text-muted-foreground mt-1">
+                        {registryData.items.length} production-ready mobile UI blocks built with shadcn/ui.
+                        Install any block with the shadcn CLI.
+                    </p>
+                </div>
+                <a
+                    href="https://github.com/bigmints/shadcn-blocks"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground transition-colors p-2 -m-2"
+                    aria-label="View on GitHub"
+                >
+                    <Github className="size-5" />
+                </a>
             </div>
 
             {Object.entries(grouped).map(([category, items]) => (
