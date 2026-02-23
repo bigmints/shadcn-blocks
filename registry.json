@@ -1,7 +1,7 @@
 {
     "$schema": "https://ui.shadcn.com/schema/registry.json",
     "name": "mobile-blocks",
-    "homepage": "https://mobile-blocks.vercel.app",
+    "homepage": "https://blocks.bigmints.com",
     "items": [
         {
             "name": "shell-01",
