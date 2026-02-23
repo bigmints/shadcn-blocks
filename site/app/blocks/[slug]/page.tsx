@@ -36,9 +36,10 @@ export default async function BlockPage({
     const meta = blockMeta[slug];
     if (!meta) notFound();
 
-    // Read the source code from registry files
+    // Read the source code from registry files (registry is at repo root, one level up from site/)
     const filePath = path.join(
         process.cwd(),
+        "..",
         "registry",
         "dubai",
         slug,

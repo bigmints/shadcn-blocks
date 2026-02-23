@@ -211,16 +211,18 @@ export function BlocksLayout({ children }: { children: React.ReactNode }) {
                         <span className="text-sm font-medium text-muted-foreground">
                             Mobile Blocks
                         </span>
-                        <GitHubStars />
-                        <a
-                            href="https://ui.shadcn.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center rounded-md border size-7 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-                            title="shadcn/ui"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="size-3.5"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" d="m208 128-80 80M192 40 40 192" /></svg>
-                        </a>
+                        <div className="flex items-center gap-2">
+                            <GitHubStars />
+                            <a
+                                href="https://ui.shadcn.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center rounded-md border size-7 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                                title="shadcn/ui"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="size-3.5"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" d="m208 128-80 80M192 40 40 192" /></svg>
+                            </a>
+                        </div>
                     </div>
                 </header>
                 <div className="flex-1 overflow-auto">{children}</div>
