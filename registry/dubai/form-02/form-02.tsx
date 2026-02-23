@@ -91,7 +91,7 @@ export function Form02() {
                         <>
                             <div className="space-y-2">
                                 <Label className="text-sm font-medium">Street Address</Label>
-                                <Input className="h-11" placeholder="123 Main Street" defaultValue="123 Main Street" />
+                                <Input className="h-11" placeholder="123 Sheikh Zayed Road" defaultValue="123 Sheikh Zayed Road" />
                             </div>
                             <div className="space-y-2">
                                 <Label className="text-sm font-medium">Apartment / Suite</Label>
@@ -100,7 +100,7 @@ export function Form02() {
                             <div className="grid grid-cols-2 gap-3">
                                 <div className="space-y-2">
                                     <Label className="text-sm font-medium">City</Label>
-                                    <Input className="h-11" placeholder="New York" defaultValue="New York" />
+                                    <Input className="h-11" placeholder="Dubai" defaultValue="Dubai" />
                                 </div>
                                 <div className="space-y-2">
                                     <Label className="text-sm font-medium">State</Label>
@@ -109,7 +109,7 @@ export function Form02() {
                                             <SelectValue />
                                         </SelectTrigger>
                                         <SelectContent>
-                                            <SelectItem value="ny">New York</SelectItem>
+                                            <SelectItem value="ny">Dubai</SelectItem>
                                             <SelectItem value="ca">California</SelectItem>
                                             <SelectItem value="tx">Texas</SelectItem>
                                         </SelectContent>
@@ -130,7 +130,7 @@ export function Form02() {
                                 <div className="space-y-2 text-sm">
                                     <div className="flex justify-between">
                                         <span className="text-muted-foreground">Name</span>
-                                        <span className="font-medium">John Doe</span>
+                                        <span className="font-medium">Khalid Al Maktoum</span>
                                     </div>
                                     <div className="flex justify-between">
                                         <span className="text-muted-foreground">Email</span>
@@ -152,7 +152,7 @@ export function Form02() {
                                     </div>
                                     <div className="flex justify-between">
                                         <span className="text-muted-foreground">City</span>
-                                        <span className="font-medium">New York, NY 10001</span>
+                                        <span className="font-medium">Dubai, Dubai, UAE</span>
                                     </div>
                                 </div>
                             </div>

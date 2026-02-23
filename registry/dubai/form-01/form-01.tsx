@@ -18,7 +18,7 @@ interface FormErrors {
 
 export function Form01() {
     const [errors, setErrors] = useState<FormErrors>({});
-    const [name, setName] = useState("Sarah Johnson");
+    const [name, setName] = useState("Noura Al Falasi");
     const [email, setEmail] = useState("sarah@");
     const [phone, setPhone] = useState("");
 
@@ -93,7 +93,7 @@ export function Form01() {
                                 value={phone}
                                 onChange={(e) => setPhone(e.target.value)}
                                 className={`h-11 ${errors.phone ? "border-destructive focus-visible:ring-destructive/20" : ""}`}
-                                placeholder="+1 (555) 000-0000"
+                                placeholder="+971 04 000-0000"
                             />
                             {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
                         </div>

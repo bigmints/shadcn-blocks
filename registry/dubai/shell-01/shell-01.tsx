@@ -17,10 +17,10 @@ const tabs = [
 ];
 
 const feedItems = [
-    { name: "Sarah Chen", handle: "@sarahc", time: "2h", text: "Just shipped our new design system! 🎉 The team worked incredibly hard on making everything pixel-perfect.", avatar: "SC", likes: 42, comments: 8 },
+    { name: "Noura Chen", handle: "@sarahc", time: "2h", text: "Just shipped our new design system! 🎉 The team worked incredibly hard on making everything pixel-perfect.", avatar: "SC", likes: 42, comments: 8 },
     { name: "James Wilson", handle: "@jamesw", time: "4h", text: "Beautiful morning run along the coast. Nothing beats starting the day with fresh air and clear skies. 🏃‍♂️", avatar: "JW", likes: 128, comments: 15 },
     { name: "Maria Garcia", handle: "@mariag", time: "6h", text: "Excited to announce our Series A! We're building something special and can't wait to share more details soon.", avatar: "MG", likes: 256, comments: 32 },
-    { name: "Alex Kim", handle: "@alexk", time: "8h", text: "Pro tip: Use CSS container queries instead of media queries for truly responsive components. Game changer! 💡", avatar: "AK", likes: 89, comments: 12 },
+    { name: "Ahmad Kim", handle: "@alexk", time: "8h", text: "Pro tip: Use CSS container queries instead of media queries for truly responsive components. Game changer! 💡", avatar: "AK", likes: 89, comments: 12 },
 ];
 
 export function Shell01() {

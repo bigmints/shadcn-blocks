@@ -54,7 +54,7 @@ export function List03() {
                                 <AvatarFallback className="bg-primary text-primary-foreground text-lg">JD</AvatarFallback>
                             </Avatar>
                             <div className="flex-1 text-left">
-                                <p className="font-semibold">John Doe</p>
+                                <p className="font-semibold">Khalid Al Maktoum</p>
                                 <p className="text-xs text-muted-foreground">john@example.com</p>
                                 <Badge variant="secondary" className="mt-1 text-[10px] px-2 py-0 rounded-full">Pro Plan</Badge>
                             </div>

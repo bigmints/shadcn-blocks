@@ -8,11 +8,11 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 
 const contacts = [
-    { name: "Sarah Chen", role: "Product Designer", status: "online", avatar: "SC", lastSeen: "Active now", unread: 3 },
+    { name: "Noura Chen", role: "Product Designer", status: "online", avatar: "SC", lastSeen: "Active now", unread: 3 },
     { name: "James Wilson", role: "Engineering Lead", status: "online", avatar: "JW", lastSeen: "Active now" },
     { name: "Maria Garcia", role: "Marketing Director", status: "away", avatar: "MG", lastSeen: "5m ago" },
-    { name: "Alex Kim", role: "Data Scientist", status: "offline", avatar: "AK", lastSeen: "2h ago" },
-    { name: "Emily Parker", role: "UX Researcher", status: "online", avatar: "EP", lastSeen: "Active now", unread: 1 },
+    { name: "Ahmad Kim", role: "Data Scientist", status: "offline", avatar: "AK", lastSeen: "2h ago" },
+    { name: "Mariam Parker", role: "UX Researcher", status: "online", avatar: "EP", lastSeen: "Active now", unread: 1 },
     { name: "David Chen", role: "iOS Developer", status: "offline", avatar: "DC", lastSeen: "1d ago" },
     { name: "Lisa Thompson", role: "Content Strategist", status: "away", avatar: "LT", lastSeen: "30m ago" },
     { name: "Ryan Mitchell", role: "Backend Engineer", status: "online", avatar: "RM", lastSeen: "Active now" },

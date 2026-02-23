@@ -37,7 +37,7 @@ export function Confirmation01() {
 
                 {/* Amount */}
                 <div className="mt-6 text-center">
-                    <p className="text-4xl font-bold tracking-tight">$249.99</p>
+                    <p className="text-4xl font-bold tracking-tight">AED 918</p>
                     <p className="text-xs text-muted-foreground mt-1">Paid to Acme Store</p>
                 </div>
 

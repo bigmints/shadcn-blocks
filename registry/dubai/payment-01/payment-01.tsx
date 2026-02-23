@@ -62,7 +62,7 @@ export function Payment01() {
                                 <div className="flex justify-between mt-3">
                                     <div>
                                         <p className="text-[10px] text-white/50 uppercase">Card Holder</p>
-                                        <p className="text-xs font-medium">John Doe</p>
+                                        <p className="text-xs font-medium">Khalid Al Maktoum</p>
                                     </div>
                                     <div>
                                         <p className="text-[10px] text-white/50 uppercase">Expires</p>
@@ -110,7 +110,7 @@ export function Payment01() {
 
                         <div className="space-y-2">
                             <Label className="text-sm font-medium">Cardholder Name</Label>
-                            <Input placeholder="Name on card" className="h-11" defaultValue="John Doe" />
+                            <Input placeholder="Name on card" className="h-11" defaultValue="Khalid Al Maktoum" />
                         </div>
 
                         <Separator />
@@ -129,7 +129,7 @@ export function Payment01() {
             <div className="border-t px-6 py-4 pb-8">
                 <Button className="w-full h-12 font-semibold text-base gap-2">
                     <Lock className="h-4 w-4" />
-                    Pay $249.99
+                    Pay AED 918
                 </Button>
                 <p className="text-[10px] text-muted-foreground text-center mt-2">
                     Secured by 256-bit SSL encryption

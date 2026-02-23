@@ -104,7 +104,7 @@ export function Payment02() {
                         <h3 className="text-sm font-semibold mb-1">Order Summary</h3>
                         <div className="flex justify-between text-sm">
                             <span className="text-muted-foreground">Subtotal</span>
-                            <span>$204.96</span>
+                            <span>AED 752</span>
                         </div>
                         <div className="flex justify-between text-sm">
                             <span className="text-muted-foreground">Shipping</span>
@@ -112,12 +112,12 @@ export function Payment02() {
                         </div>
                         <div className="flex justify-between text-sm">
                             <span className="text-muted-foreground">Tax</span>
-                            <span>$18.45</span>
+                            <span>AED 68</span>
                         </div>
                         <Separator />
                         <div className="flex justify-between">
                             <span className="font-semibold">Total</span>
-                            <span className="font-bold text-lg">$223.41</span>
+                            <span className="font-bold text-lg">AED 820</span>
                         </div>
                     </div>
                 </div>
@@ -126,7 +126,7 @@ export function Payment02() {
             {/* Pay Now */}
             <div className="border-t px-5 py-4 pb-8">
                 <Button className="w-full h-12 font-semibold text-base">
-                    Pay $223.41
+                    Pay AED 820
                 </Button>
             </div>
         </div>

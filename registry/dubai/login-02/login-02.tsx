@@ -72,7 +72,7 @@ export function Login02() {
                                     </Button>
                                     <Input
                                         type="tel"
-                                        placeholder="(555) 000-0000"
+                                        placeholder="04 000-0000"
                                         className="h-11 flex-1"
                                     />
                                 </div>
@@ -101,7 +101,7 @@ export function Login02() {
                         <div className="mb-8">
                             <h1 className="text-2xl font-bold tracking-tight">Verify your phone</h1>
                             <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-                                Enter the 6-digit code sent to <span className="font-medium text-foreground">+1 (555) 000-0000</span>
+                                Enter the 6-digit code sent to <span className="font-medium text-foreground">+971 04 000-0000</span>
                             </p>
                         </div>
 

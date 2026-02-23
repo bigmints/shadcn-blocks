@@ -68,7 +68,7 @@ export function Shell03() {
                                 <AvatarFallback className="bg-primary text-primary-foreground text-xs">SC</AvatarFallback>
                             </Avatar>
                             <div className="flex-1">
-                                <p className="text-sm font-medium">Sarah Chen</p>
+                                <p className="text-sm font-medium">Noura Chen</p>
                                 <p className="text-xs text-muted-foreground">Senior Designer at Acme</p>
                             </div>
                             <Button size="sm" variant="outline" className="h-8 text-xs rounded-full px-4">

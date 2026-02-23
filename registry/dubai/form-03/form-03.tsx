@@ -10,19 +10,19 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card } from "@/components/ui/card";
 
 const categories = ["All", "Electronics", "Clothing", "Home", "Sports", "Books"];
-const priceRanges = ["Under $25", "$25-$50", "$50-$100", "$100+"];
+const priceRanges = ["Under AED 92", "AED 92-184", "AED 184-367", "AED 367+"];
 const ratings = ["4★ & up", "3★ & up", "2★ & up"];
 
 const results = [
-    { name: "Wireless Headphones Pro", price: "$149.99", originalPrice: "$199.99", rating: "4.8", reviews: "2.4k", tag: "Best Seller", color: "from-violet-100 to-violet-50" },
-    { name: "Smart Watch Series X", price: "$299.00", originalPrice: null, rating: "4.6", reviews: "1.8k", tag: "New", color: "from-blue-100 to-blue-50" },
-    { name: "Portable Bluetooth Speaker", price: "$59.99", originalPrice: "$79.99", rating: "4.5", reviews: "956", tag: null, color: "from-amber-100 to-amber-50" },
-    { name: "Noise Cancelling Earbuds", price: "$89.99", originalPrice: null, rating: "4.7", reviews: "3.2k", tag: "Popular", color: "from-emerald-100 to-emerald-50" },
+    { name: "Wireless Headphones Pro", price: "AED 550", originalPrice: "AED 735", rating: "4.8", reviews: "2.4k", tag: "Best Seller", color: "from-violet-100 to-violet-50" },
+    { name: "Smart Watch Series X", price: "AED 1,099", originalPrice: null, rating: "4.6", reviews: "1.8k", tag: "New", color: "from-blue-100 to-blue-50" },
+    { name: "Portable Bluetooth Speaker", price: "AED 220", originalPrice: "AED 294", rating: "4.5", reviews: "956", tag: null, color: "from-amber-100 to-amber-50" },
+    { name: "Noise Cancelling Earbuds", price: "AED 330", originalPrice: null, rating: "4.7", reviews: "3.2k", tag: "Popular", color: "from-emerald-100 to-emerald-50" },
 ];
 
 export function Form03() {
     const [selectedCategory, setSelectedCategory] = useState("All");
-    const [selectedPrice, setSelectedPrice] = useState<string | null>("$25-$50");
+    const [selectedPrice, setSelectedPrice] = useState<string | null>("AED 92-184");
     const [selectedRating, setSelectedRating] = useState<string | null>("4★ & up");
     const [showFilters, setShowFilters] = useState(false);
 

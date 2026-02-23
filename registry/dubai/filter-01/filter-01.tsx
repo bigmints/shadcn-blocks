@@ -85,8 +85,8 @@ export function Filter01() {
                             className="w-full"
                         />
                         <div className="flex justify-between text-[10px] text-muted-foreground">
-                            <span>$0</span>
-                            <span>$500</span>
+                            <span>AED 0</span>
+                            <span>AED 1,835</span>
                         </div>
                     </div>
 

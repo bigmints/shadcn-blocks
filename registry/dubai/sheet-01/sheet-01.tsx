@@ -11,7 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 const places = [
     { name: "Blue Bottle Coffee", type: "Café", distance: "0.2 mi", rating: "4.8" },
     { name: "Whole Foods Market", type: "Grocery", distance: "0.5 mi", rating: "4.5" },
-    { name: "Central Park", type: "Park", distance: "0.8 mi", rating: "4.9" },
+    { name: "Al Barsha Park", type: "Park", distance: "0.8 mi", rating: "4.9" },
 ];
 
 export function Sheet01() {

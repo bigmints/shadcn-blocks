@@ -80,7 +80,7 @@ export function Payment03() {
                                 </div>
                                 <div className="space-y-2">
                                     <Label className="text-sm font-medium">Address</Label>
-                                    <Input className="h-11" defaultValue="123 Main Street" />
+                                    <Input className="h-11" defaultValue="123 Sheikh Zayed Road" />
                                 </div>
                                 <div className="space-y-2">
                                     <Label className="text-sm font-medium">Apt / Suite</Label>
@@ -125,7 +125,7 @@ export function Payment03() {
                                 </div>
                                 <div className="space-y-2">
                                     <Label className="text-sm font-medium">Name on Card</Label>
-                                    <Input className="h-11" defaultValue="John Doe" />
+                                    <Input className="h-11" defaultValue="Khalid Al Maktoum" />
                                 </div>
                             </div>
                         </>
@@ -145,7 +145,7 @@ export function Payment03() {
                                         <Pencil className="h-3 w-3" /> Edit
                                     </button>
                                 </div>
-                                <p className="text-sm text-muted-foreground">John Doe<br />123 Main Street, Apt 4B<br />New York, NY 10001</p>
+                                <p className="text-sm text-muted-foreground">Khalid Al Maktoum<br />123 Sheikh Zayed Road, Apt 4B<br />Dubai, Dubai, UAE</p>
                             </div>
 
                             <div className="rounded-xl border p-4 space-y-2">
@@ -165,8 +165,8 @@ export function Payment03() {
                                     <h3 className="text-sm font-semibold">Items</h3>
                                 </div>
                                 {[
-                                    { name: "Wireless Headphones", qty: 1, price: "$149.99" },
-                                    { name: "USB-C Cable × 2", qty: 2, price: "$24.98" },
+                                    { name: "Wireless Headphones", qty: 1, price: "AED 550" },
+                                    { name: "USB-C Cable × 2", qty: 2, price: "AED 92" },
                                 ].map((item, i) => (
                                     <div key={i} className="flex justify-between px-4 py-2.5 text-sm border-t">
                                         <span className="text-muted-foreground">{item.name}</span>
@@ -176,7 +176,7 @@ export function Payment03() {
                                 <Separator />
                                 <div className="flex justify-between px-4 py-3">
                                     <span className="font-semibold text-sm">Total</span>
-                                    <span className="font-bold">$174.97</span>
+                                    <span className="font-bold">AED 643</span>
                                 </div>
                             </div>
 
@@ -199,7 +199,7 @@ export function Payment03() {
                     className="flex-1 h-11 font-medium"
                     onClick={() => currentStep < 2 && setCurrentStep(currentStep + 1)}
                 >
-                    {currentStep === 2 ? "Place Order — $174.97" : "Continue"}
+                    {currentStep === 2 ? "Place Order — AED 643" : "Continue"}
                 </Button>
             </div>
         </div>

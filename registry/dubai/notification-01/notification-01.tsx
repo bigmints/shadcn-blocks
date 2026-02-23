@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const notifications = [
-    { id: "1", app: "Messages", icon: "💬", color: "bg-green-500", title: "Sarah Chen", message: "Hey! Are you free for lunch today?", time: "now" },
+    { id: "1", app: "Messages", icon: "💬", color: "bg-green-500", title: "Noura Chen", message: "Hey! Are you free for lunch today?", time: "now" },
     { id: "2", app: "Shopping", icon: "🛍", color: "bg-orange-500", title: "Order Shipped", message: "Your order #4829 has been shipped", time: "2m ago" },
     { id: "3", app: "Calendar", icon: "📅", color: "bg-red-500", title: "Meeting in 15 min", message: "Design Review — Conference Room B", time: "5m ago" },
 ];
@@ -41,7 +41,7 @@ export function Notification01() {
                             <div className="flex-1 min-w-0">
                                 <span className="text-[10px] text-muted-foreground uppercase tracking-wider font-medium">Phone</span>
                                 <p className="text-sm font-semibold">Incoming Call</p>
-                                <p className="text-xs text-muted-foreground">Alex Rivera</p>
+                                <p className="text-xs text-muted-foreground">Ahmad Rivera</p>
                             </div>
                             <button onClick={() => setBanner(false)} className="p-1 rounded-full hover:bg-muted shrink-0">
                                 <X className="h-3.5 w-3.5 text-muted-foreground" />

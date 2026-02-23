@@ -8,9 +8,9 @@ import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const orderItems = [
-    { name: "Wireless Headphones Pro", variant: "Midnight Black", qty: 1, price: "$149.99" },
-    { name: "USB-C Charging Cable", variant: "2m, White", qty: 2, price: "$24.98" },
-    { name: "Silicone Case", variant: "Navy Blue", qty: 1, price: "$29.99" },
+    { name: "Wireless Headphones Pro", variant: "Midnight Black", qty: 1, price: "AED 550" },
+    { name: "USB-C Charging Cable", variant: "2m, White", qty: 2, price: "AED 92" },
+    { name: "Silicone Case", variant: "Navy Blue", qty: 1, price: "AED 110" },
 ];
 
 export function Confirmation02() {
@@ -79,20 +79,20 @@ export function Confirmation02() {
                     <div className="rounded-xl border p-4 space-y-2.5">
                         <div className="flex justify-between text-sm">
                             <span className="text-muted-foreground">Subtotal</span>
-                            <span className="font-medium">$204.96</span>
+                            <span className="font-medium">AED 752</span>
                         </div>
                         <div className="flex justify-between text-sm">
                             <span className="text-muted-foreground">Shipping</span>
-                            <span className="font-medium">$9.99</span>
+                            <span className="font-medium">AED 37</span>
                         </div>
                         <div className="flex justify-between text-sm">
                             <span className="text-muted-foreground">Tax</span>
-                            <span className="font-medium">$18.45</span>
+                            <span className="font-medium">AED 68</span>
                         </div>
                         <Separator />
                         <div className="flex justify-between text-base">
                             <span className="font-semibold">Total</span>
-                            <span className="font-bold">$233.40</span>
+                            <span className="font-bold">AED 857</span>
                         </div>
                     </div>
 
@@ -100,9 +100,9 @@ export function Confirmation02() {
                     <div className="rounded-xl border p-4">
                         <h3 className="text-sm font-semibold mb-2">Shipping To</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                            John Doe<br />
-                            123 Main Street, Apt 4B<br />
-                            New York, NY 10001
+                            Khalid Al Maktoum<br />
+                            123 Sheikh Zayed Road, Apt 4B<br />
+                            Dubai, Dubai, UAE
                         </p>
                     </div>
                 </div>

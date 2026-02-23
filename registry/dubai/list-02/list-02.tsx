@@ -8,12 +8,12 @@ import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const products = [
-    { name: "Minimal Desk Lamp", price: "$89", originalPrice: "$120", rating: 4.8, reviews: 245, category: "Home", favorite: false, colors: ["bg-zinc-900", "bg-amber-100", "bg-zinc-400"] },
-    { name: "Leather Backpack", price: "$149", rating: 4.6, reviews: 189, category: "Fashion", favorite: true, colors: ["bg-amber-800", "bg-zinc-900"] },
-    { name: "Wireless Charger Pro", price: "$45", rating: 4.9, reviews: 572, category: "Tech", favorite: false, tag: "Sale", colors: ["bg-zinc-100", "bg-zinc-900"] },
-    { name: "Ceramic Plant Pot", price: "$32", rating: 4.5, reviews: 98, category: "Home", favorite: false, colors: ["bg-stone-100", "bg-emerald-800"] },
-    { name: "Canvas Sneakers", price: "$75", originalPrice: "$95", rating: 4.7, reviews: 312, category: "Fashion", favorite: true, colors: ["bg-zinc-100", "bg-zinc-900", "bg-blue-900"] },
-    { name: "Bluetooth Earbuds", price: "$129", rating: 4.8, reviews: 1024, category: "Tech", favorite: false, tag: "New", colors: ["bg-zinc-100", "bg-zinc-900"] },
+    { name: "Minimal Desk Lamp", price: "AED 327", originalPrice: "AED 441", rating: 4.8, reviews: 245, category: "Home", favorite: false, colors: ["bg-zinc-900", "bg-amber-100", "bg-zinc-400"] },
+    { name: "Leather Backpack", price: "AED 548", rating: 4.6, reviews: 189, category: "Fashion", favorite: true, colors: ["bg-amber-800", "bg-zinc-900"] },
+    { name: "Wireless Charger Pro", price: "AED 165", rating: 4.9, reviews: 572, category: "Tech", favorite: false, tag: "Sale", colors: ["bg-zinc-100", "bg-zinc-900"] },
+    { name: "Ceramic Plant Pot", price: "AED 118", rating: 4.5, reviews: 98, category: "Home", favorite: false, colors: ["bg-stone-100", "bg-emerald-800"] },
+    { name: "Canvas Sneakers", price: "AED 276", originalPrice: "AED 349", rating: 4.7, reviews: 312, category: "Fashion", favorite: true, colors: ["bg-zinc-100", "bg-zinc-900", "bg-blue-900"] },
+    { name: "Bluetooth Earbuds", price: "AED 474", rating: 4.8, reviews: 1024, category: "Tech", favorite: false, tag: "New", colors: ["bg-zinc-100", "bg-zinc-900"] },
 ];
 
 export function List02() {

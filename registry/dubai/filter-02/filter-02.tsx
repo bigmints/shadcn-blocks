@@ -10,7 +10,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 const filterChips = [
     { id: "category", label: "Category", options: ["Electronics", "Clothing", "Home"], selected: "Electronics" },
     { id: "brand", label: "Brand", options: ["All Brands", "Apple", "Samsung"], selected: null },
-    { id: "price", label: "Price", options: ["Any", "Under $50", "$50-100"], selected: "Under $50" },
+    { id: "price", label: "Price", options: ["Any", "Under AED 184", "AED 184-367"], selected: "Under AED 184" },
     { id: "rating", label: "Rating", options: ["Any", "4+", "3+"], selected: "4+" },
     { id: "shipping", label: "Shipping", options: ["Any", "Free", "Express"], selected: null },
     { id: "condition", label: "Condition", options: ["Any", "New", "Refurbished"], selected: null },
@@ -19,11 +19,11 @@ const filterChips = [
 const sortOptions = ["Most Relevant", "Price: Low to High", "Price: High to Low", "Newest", "Best Rated"];
 
 const items = [
-    { name: "AirPods Pro 3", desc: "Active noise cancellation", price: "$249", rating: "4.9", reviews: "12.5k", color: "from-blue-100 to-blue-50" },
-    { name: "Galaxy Buds Ultra", desc: "360 Audio with ANC", price: "$199", rating: "4.7", reviews: "8.2k", color: "from-violet-100 to-violet-50" },
-    { name: "USB-C Hub Adapter", desc: "7-in-1 multiport adapter", price: "$35", rating: "4.5", reviews: "3.1k", color: "from-amber-100 to-amber-50" },
-    { name: "Mechanical Keyboard", desc: "Wireless 75% layout", price: "$89", rating: "4.8", reviews: "2.4k", color: "from-emerald-100 to-emerald-50" },
-    { name: "Portable SSD 2TB", desc: "USB 3.2 up to 2000MB/s", price: "$149", rating: "4.6", reviews: "5.8k", color: "from-rose-100 to-rose-50" },
+    { name: "AirPods Pro 3", desc: "Active noise cancellation", price: "AED 915", rating: "4.9", reviews: "12.5k", color: "from-blue-100 to-blue-50" },
+    { name: "Galaxy Buds Ultra", desc: "360 Audio with ANC", price: "AED 731", rating: "4.7", reviews: "8.2k", color: "from-violet-100 to-violet-50" },
+    { name: "USB-C Hub Adapter", desc: "7-in-1 multiport adapter", price: "AED 129", rating: "4.5", reviews: "3.1k", color: "from-amber-100 to-amber-50" },
+    { name: "Mechanical Keyboard", desc: "Wireless 75% layout", price: "AED 327", rating: "4.8", reviews: "2.4k", color: "from-emerald-100 to-emerald-50" },
+    { name: "Portable SSD 2TB", desc: "USB 3.2 up to 2000MB/s", price: "AED 548", rating: "4.6", reviews: "5.8k", color: "from-rose-100 to-rose-50" },
 ];
 
 export function Filter02() {

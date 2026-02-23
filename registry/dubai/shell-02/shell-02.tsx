@@ -71,7 +71,7 @@ export function Shell02() {
                                     <AvatarFallback className="bg-primary text-primary-foreground text-sm">JD</AvatarFallback>
                                 </Avatar>
                                 <div>
-                                    <p className="font-semibold text-sm">John Doe</p>
+                                    <p className="font-semibold text-sm">Khalid Al Maktoum</p>
                                     <p className="text-xs text-muted-foreground">john@example.com</p>
                                 </div>
                             </div>
