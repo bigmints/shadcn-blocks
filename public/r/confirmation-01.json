@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "confirmation-01",
+  "title": "Payment Success",
+  "description": "Success confirmation with animated checkmark, transaction details, copy-to-clipboard, and share receipt button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "separator"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/confirmation-01/confirmation-01.tsx",
+      "content": "\"use client\";\n\nimport { StatusBar } from \"@/registry/new-york/_shared/status-bar\";\nimport { Check, Copy, Share2 } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport { Separator } from \"@/components/ui/separator\";\n\nexport function Confirmation01() {\n    const [copied, setCopied] = useState(false);\n\n    const handleCopy = () => {\n        setCopied(true);\n        setTimeout(() => setCopied(false), 2000);\n    };\n\n    return (\n        <div className=\"flex flex-col h-full bg-background\">\n            <StatusBar />\n\n            <div className=\"flex-1 flex flex-col items-center justify-center px-6 pb-8\">\n                {/* Animated Checkmark */}\n                <div className=\"relative mb-6\">\n                    <div className=\"w-24 h-24 rounded-full bg-emerald-500/10 flex items-center justify-center\">\n                        <div className=\"w-16 h-16 rounded-full bg-emerald-500 flex items-center justify-center animate-in zoom-in-50 duration-500\">\n                            <Check className=\"h-8 w-8 text-white stroke-[3]\" />\n                        </div>\n                    </div>\n                    {/* Pulse ring */}\n                    <div className=\"absolute inset-0 rounded-full bg-emerald-500/10 animate-ping\" style={{ animationDuration: '2s' }} />\n                </div>\n\n                <h1 className=\"text-2xl font-bold text-center\">Payment Successful!</h1>\n                <p className=\"text-sm text-muted-foreground text-center mt-2\">\n                    Your payment has been processed successfully\n                </p>\n\n                {/* Amount */}\n                <div className=\"mt-6 text-center\">\n                    <p className=\"text-4xl font-bold tracking-tight\">$249.99</p>\n                    <p className=\"text-xs text-muted-foreground mt-1\">Paid to Acme Store</p>\n                </div>\n\n                {/* Details */}\n                <div className=\"w-full mt-8 rounded-xl border p-4 space-y-3\">\n                    <div className=\"flex justify-between text-sm\">\n                        <span className=\"text-muted-foreground\">Transaction ID</span>\n                        <div className=\"flex items-center gap-1.5\">\n                            <span className=\"font-mono text-xs font-medium\">TXN-8F2K9L</span>\n                            <button onClick={handleCopy} className=\"text-muted-foreground hover:text-foreground transition-colors\">\n                                {copied ? <Check className=\"h-3.5 w-3.5 text-emerald-500\" /> : <Copy className=\"h-3.5 w-3.5\" />}\n                            </button>\n                        </div>\n                    </div>\n                    <Separator />\n                    <div className=\"flex justify-between text-sm\">\n                        <span className=\"text-muted-foreground\">Date</span>\n                        <span className=\"font-medium\">Feb 23, 2026</span>\n                    </div>\n                    <Separator />\n                    <div className=\"flex justify-between text-sm\">\n                        <span className=\"text-muted-foreground\">Method</span>\n                        <span className=\"font-medium\">•••• 4242</span>\n                    </div>\n                    <Separator />\n                    <div className=\"flex justify-between text-sm\">\n                        <span className=\"text-muted-foreground\">Status</span>\n                        <span className=\"text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full\">Completed</span>\n                    </div>\n                </div>\n            </div>\n\n            {/* Bottom Actions */}\n            <div className=\"px-6 pb-8 space-y-3\">\n                <Button className=\"w-full h-11 font-medium\">\n                    Done\n                </Button>\n                <Button variant=\"outline\" className=\"w-full h-11 gap-2\">\n                    <Share2 className=\"h-4 w-4\" />\n                    Share Receipt\n                </Button>\n            </div>\n        </div>\n    );\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/new-york/_shared/status-bar.tsx",
+      "content": "\"use client\";\n\nimport { Signal, Wifi, Battery } from \"lucide-react\";\n\nexport function StatusBar() {\n    return (\n        <div className=\"flex items-center justify-between px-6 pt-3 pb-1\">\n            <span className=\"text-sm font-semibold\">9:41</span>\n            <div className=\"flex items-center gap-1.5\">\n                <Signal className=\"h-3.5 w-3.5\" />\n                <Wifi className=\"h-3.5 w-3.5\" />\n                <Battery className=\"h-3.5 w-3.5\" />\n            </div>\n        </div>\n    );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "status"
+  ],
+  "type": "registry:block"
+}
