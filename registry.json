@@ -22,11 +22,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/shell-01/shell-01.tsx",
+                    "path": "registry/dubai/shell-01/shell-01.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -53,11 +53,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/shell-02/shell-02.tsx",
+                    "path": "registry/dubai/shell-02/shell-02.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -82,11 +82,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/shell-03/shell-03.tsx",
+                    "path": "registry/dubai/shell-03/shell-03.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -111,11 +111,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/login-01/login-01.tsx",
+                    "path": "registry/dubai/login-01/login-01.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -138,11 +138,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/login-02/login-02.tsx",
+                    "path": "registry/dubai/login-02/login-02.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -165,11 +165,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/login-03/login-03.tsx",
+                    "path": "registry/dubai/login-03/login-03.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -195,11 +195,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/form-01/form-01.tsx",
+                    "path": "registry/dubai/form-01/form-01.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -225,11 +225,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/form-02/form-02.tsx",
+                    "path": "registry/dubai/form-02/form-02.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -254,11 +254,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/form-03/form-03.tsx",
+                    "path": "registry/dubai/form-03/form-03.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -282,11 +282,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/list-01/list-01.tsx",
+                    "path": "registry/dubai/list-01/list-01.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -309,11 +309,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/list-02/list-02.tsx",
+                    "path": "registry/dubai/list-02/list-02.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -338,11 +338,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/list-03/list-03.tsx",
+                    "path": "registry/dubai/list-03/list-03.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -369,11 +369,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/filter-01/filter-01.tsx",
+                    "path": "registry/dubai/filter-01/filter-01.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -397,11 +397,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/filter-02/filter-02.tsx",
+                    "path": "registry/dubai/filter-02/filter-02.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -422,11 +422,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/error-01/error-01.tsx",
+                    "path": "registry/dubai/error-01/error-01.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -447,11 +447,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/error-02/error-02.tsx",
+                    "path": "registry/dubai/error-02/error-02.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -473,11 +473,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/confirmation-01/confirmation-01.tsx",
+                    "path": "registry/dubai/confirmation-01/confirmation-01.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -501,11 +501,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/confirmation-02/confirmation-02.tsx",
+                    "path": "registry/dubai/confirmation-02/confirmation-02.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -531,11 +531,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/payment-01/payment-01.tsx",
+                    "path": "registry/dubai/payment-01/payment-01.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -559,11 +559,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/payment-02/payment-02.tsx",
+                    "path": "registry/dubai/payment-02/payment-02.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -589,11 +589,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/payment-03/payment-03.tsx",
+                    "path": "registry/dubai/payment-03/payment-03.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -618,11 +618,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/sheet-01/sheet-01.tsx",
+                    "path": "registry/dubai/sheet-01/sheet-01.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -646,11 +646,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/modal-01/modal-01.tsx",
+                    "path": "registry/dubai/modal-01/modal-01.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
@@ -673,11 +673,11 @@
             ],
             "files": [
                 {
-                    "path": "registry/new-york/notification-01/notification-01.tsx",
+                    "path": "registry/dubai/notification-01/notification-01.tsx",
                     "type": "registry:component"
                 },
                 {
-                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "path": "registry/dubai/_shared/status-bar.tsx",
                     "type": "registry:component"
                 }
             ]
