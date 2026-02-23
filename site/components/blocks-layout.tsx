@@ -29,8 +29,9 @@ import {
     Smartphone,
     Layers,
     Github,
-    ExternalLink,
+    Star,
 } from "lucide-react";
+import { useEffect, useState } from "react";
 import packageJson from "@/package.json";
 
 const categories = [
@@ -157,41 +158,44 @@ function AppSidebar() {
                 ))}
             </SidebarContent>
             <SidebarFooter>
-                <div className="flex flex-col gap-2 px-2 py-3 text-xs text-muted-foreground">
-                    <div className="flex items-center gap-3">
-                        <a
-                            href="https://github.com/bigmints/shadcn-blocks"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
-                        >
-                            <Github className="size-3.5" />
-                            GitHub
-                        </a>
-                        <a
-                            href="https://ui.shadcn.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
-                        >
-                            <ExternalLink className="size-3" />
-                            shadcn/ui
-                        </a>
-                    </div>
-                    <div className="flex items-center justify-between">
-                        <a
-                            href="https://bigmints.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-foreground transition-colors"
-                        >
-                            bigmints.com
-                        </a>
-                        <span className="text-[10px] font-mono">v{packageJson.version}</span>
-                    </div>
+                <div className="flex items-center justify-between px-3 py-3 text-xs text-muted-foreground">
+                    <span>Made in Dubai 🇦🇪</span>
+                    <span className="text-[10px] font-mono">v{packageJson.version}</span>
                 </div>
             </SidebarFooter>
         </Sidebar>
+    );
+}
+
+function GitHubStars() {
+    const [stars, setStars] = useState<number | null>(null);
+
+    useEffect(() => {
+        fetch("https://api.github.com/repos/bigmints/shadcn-blocks")
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.stargazers_count !== undefined) {
+                    setStars(data.stargazers_count);
+                }
+            })
+            .catch(() => { });
+    }, []);
+
+    return (
+        <a
+            href="https://github.com/bigmints/shadcn-blocks"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+        >
+            <Github className="size-3.5" />
+            <Star className="size-3 fill-yellow-500 text-yellow-500" />
+            {stars !== null ? (
+                <span>{stars}</span>
+            ) : (
+                <span className="w-3" />
+            )}
+        </a>
     );
 }
 
@@ -203,10 +207,20 @@ export function BlocksLayout({ children }: { children: React.ReactNode }) {
                 <header className="flex h-14 shrink-0 items-center gap-2 border-b px-4">
                     <SidebarTrigger className="-ml-1" />
                     <Separator orientation="vertical" className="mr-2 !h-4" />
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-1 items-center justify-between">
                         <span className="text-sm font-medium text-muted-foreground">
                             Mobile Blocks
                         </span>
+                        <GitHubStars />
+                        <a
+                            href="https://ui.shadcn.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center rounded-md border size-7 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                            title="shadcn/ui"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="size-3.5"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" d="m208 128-80 80M192 40 40 192" /></svg>
+                        </a>
                     </div>
                 </header>
                 <div className="flex-1 overflow-auto">{children}</div>
