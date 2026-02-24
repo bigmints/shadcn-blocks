@@ -21,7 +21,7 @@ interface SettingsItemProps {
 
 function SettingsItem({ icon: Icon, label, description, trailing, destructive }: SettingsItemProps) {
     return (
-        <button className={`flex items-center gap-3 w-full px-5 py-3.5 text-left hover:bg-muted/50 transition-colors active:bg-muted ${destructive ? "text-destructive" : ""}`}>
+        <div className={`flex items-center gap-3 w-full px-5 py-3.5 text-left hover:bg-muted/50 transition-colors active:bg-muted cursor-pointer ${destructive ? "text-destructive" : ""}`}>
             <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${destructive ? "bg-destructive/10" : "bg-muted"
                 }`}>
                 <Icon className="h-4.5 w-4.5" />
@@ -31,7 +31,7 @@ function SettingsItem({ icon: Icon, label, description, trailing, destructive }:
                 {description && <p className="text-[11px] text-muted-foreground">{description}</p>}
             </div>
             {trailing ?? <ChevronRight className="h-4 w-4 text-muted-foreground/50 shrink-0" />}
-        </button>
+        </div>
     );
 }
 

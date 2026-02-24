@@ -16,8 +16,13 @@ import {
     SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "@/components/ui/popover";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
     LayoutGrid,
     LogIn,
@@ -30,8 +35,15 @@ import {
     Layers,
     Github,
     Star,
+    Building2,
+    ChevronsUpDown,
+    Check,
+    Sun,
+    Moon,
+    Home,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 import packageJson from "@/package.json";
 
 const categories = [
@@ -109,7 +121,94 @@ const categories = [
     },
 ];
 
-function AppSidebar() {
+const themes = [
+    {
+        value: "dubai" as const,
+        label: "Dubai",
+        description: "Warm gold & sand",
+        icon: Building2,
+    },
+    {
+        value: "new-york" as const,
+        label: "New York",
+        description: "Clean & minimal",
+        icon: Smartphone,
+    },
+];
+
+function ThemeSwitcherPopover({ theme }: { theme: "dubai" | "new-york" }) {
+    const pathname = usePathname();
+    const router = useRouter();
+    const [open, setOpen] = useState(false);
+
+    const current = themes.find((t) => t.value === theme)!;
+    const CurrentIcon = current.icon;
+
+    const switchTo = (target: "dubai" | "new-york") => {
+        if (target === theme) {
+            setOpen(false);
+            return;
+        }
+        const newPath = pathname.replace(`/${theme}/`, `/${target}/`);
+        router.push(newPath);
+        setOpen(false);
+    };
+
+    return (
+        <Popover open={open} onOpenChange={setOpen}>
+            <PopoverTrigger asChild>
+                <SidebarMenuButton
+                    size="lg"
+                    className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+                >
+                    <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                        <CurrentIcon className="size-4" />
+                    </div>
+                    <div className="grid flex-1 text-left text-sm leading-tight">
+                        <span className="truncate font-semibold">{current.label}</span>
+                        <span className="truncate text-xs text-muted-foreground">{current.description}</span>
+                    </div>
+                    <ChevronsUpDown className="ml-auto size-4" />
+                </SidebarMenuButton>
+            </PopoverTrigger>
+            <PopoverContent
+                className="w-[--radix-popover-trigger-width] min-w-56 rounded-lg p-1"
+                align="start"
+                side="bottom"
+                sideOffset={4}
+            >
+                <div className="flex flex-col gap-0.5">
+                    {themes.map((t) => {
+                        const Icon = t.icon;
+                        const isActive = t.value === theme;
+                        return (
+                            <button
+                                key={t.value}
+                                onClick={() => switchTo(t.value)}
+                                className={`flex items-center gap-3 rounded-md px-2 py-2 text-sm transition-colors ${isActive
+                                    ? "bg-accent text-accent-foreground"
+                                    : "hover:bg-accent/50 text-foreground"
+                                    }`}
+                            >
+                                <div className={`flex size-8 items-center justify-center rounded-md border ${isActive ? "bg-primary text-primary-foreground border-primary" : "bg-background"
+                                    }`}>
+                                    <Icon className="size-4" />
+                                </div>
+                                <div className="flex-1 text-left">
+                                    <div className="font-medium">{t.label}</div>
+                                    <div className="text-xs text-muted-foreground">{t.description}</div>
+                                </div>
+                                {isActive && <Check className="size-4 text-primary" />}
+                            </button>
+                        );
+                    })}
+                </div>
+            </PopoverContent>
+        </Popover>
+    );
+}
+
+function AppSidebar({ theme }: { theme: "dubai" | "new-york" }) {
     const pathname = usePathname();
 
     return (
@@ -117,21 +216,25 @@ function AppSidebar() {
             <SidebarHeader>
                 <SidebarMenu>
                     <SidebarMenuItem>
-                        <SidebarMenuButton size="lg" asChild>
-                            <Link href="/">
-                                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                                    <Smartphone className="size-4" />
-                                </div>
-                                <div className="flex flex-col gap-0.5 leading-none">
-                                    <span className="font-semibold">Mobile Blocks</span>
-                                    <span className="text-xs text-muted-foreground">shadcn/ui registry</span>
-                                </div>
-                            </Link>
-                        </SidebarMenuButton>
+                        <ThemeSwitcherPopover theme={theme} />
                     </SidebarMenuItem>
                 </SidebarMenu>
             </SidebarHeader>
             <SidebarContent>
+                <SidebarGroup>
+                    <SidebarGroupContent>
+                        <SidebarMenu>
+                            <SidebarMenuItem>
+                                <SidebarMenuButton asChild isActive={pathname === `/${theme}/blocks`}>
+                                    <Link href={`/${theme}/blocks`}>
+                                        <Home className="size-4" />
+                                        <span>Home</span>
+                                    </Link>
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
+                        </SidebarMenu>
+                    </SidebarGroupContent>
+                </SidebarGroup>
                 {categories.map((category) => (
                     <SidebarGroup key={category.label}>
                         <SidebarGroupLabel>
@@ -144,9 +247,9 @@ function AppSidebar() {
                                     <SidebarMenuItem key={item.name}>
                                         <SidebarMenuButton
                                             asChild
-                                            isActive={pathname === `/blocks/${item.name}`}
+                                            isActive={pathname === `/${theme}/blocks/${item.name}`}
                                         >
-                                            <Link href={`/blocks/${item.name}`}>
+                                            <Link href={`/${theme}/blocks/${item.name}`}>
                                                 <span>{item.title}</span>
                                             </Link>
                                         </SidebarMenuButton>
@@ -164,6 +267,33 @@ function AppSidebar() {
                 </div>
             </SidebarFooter>
         </Sidebar>
+    );
+}
+
+function ModeToggle() {
+    const { resolvedTheme, setTheme } = useTheme();
+
+    // resolvedTheme is undefined on server / before mount
+    if (!resolvedTheme) {
+        return (
+            <button className="inline-flex items-center justify-center rounded-md border size-7 text-muted-foreground">
+                <span className="size-3.5" />
+            </button>
+        );
+    }
+
+    return (
+        <button
+            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+            className="inline-flex items-center justify-center rounded-md border size-7 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+            title={resolvedTheme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+        >
+            {resolvedTheme === "dark" ? (
+                <Sun className="size-3.5" />
+            ) : (
+                <Moon className="size-3.5" />
+            )}
+        </button>
     );
 }
 
@@ -199,10 +329,18 @@ function GitHubStars() {
     );
 }
 
-export function BlocksLayout({ children }: { children: React.ReactNode }) {
+export function BlocksLayout({ children, theme = "dubai" }: { children: React.ReactNode; theme?: "dubai" | "new-york" }) {
+    // Set data-theme on <html> so ALL elements (including portals) inherit theme
+    useEffect(() => {
+        document.documentElement.setAttribute("data-theme", theme);
+        return () => {
+            document.documentElement.removeAttribute("data-theme");
+        };
+    }, [theme]);
+
     return (
         <SidebarProvider>
-            <AppSidebar />
+            <AppSidebar theme={theme} />
             <SidebarInset>
                 <header className="flex h-14 shrink-0 items-center gap-2 border-b px-4">
                     <SidebarTrigger className="-ml-1" />
@@ -213,6 +351,7 @@ export function BlocksLayout({ children }: { children: React.ReactNode }) {
                         </span>
                         <div className="flex items-center gap-2">
                             <GitHubStars />
+                            <ModeToggle />
                             <a
                                 href="https://ui.shadcn.com"
                                 target="_blank"

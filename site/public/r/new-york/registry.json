@@ -1,0 +1,602 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "mobile-blocks",
+    "homepage": "https://mobile-blocks.vercel.app",
+    "items": [
+        {
+            "name": "shell-01",
+            "type": "registry:block",
+            "title": "Tab Bar Navigation",
+            "description": "iOS-style bottom tab bar with social feed content, active state indicator, and avatar badges.",
+            "registryDependencies": [
+                "avatar",
+                "badge",
+                "card",
+                "scroll-area"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "shells"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/shell-01/shell-01.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "shell-02",
+            "type": "registry:block",
+            "title": "Drawer Navigation",
+            "description": "Hamburger menu with animated side panel, dashboard stats grid, and recent activity list.",
+            "registryDependencies": [
+                "avatar",
+                "badge",
+                "button",
+                "card",
+                "input",
+                "scroll-area",
+                "separator"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "shells"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/shell-02/shell-02.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "shell-03",
+            "type": "registry:block",
+            "title": "Stack Navigation",
+            "description": "Back button header with article detail view, author info, engagement stats, and bookmark actions.",
+            "registryDependencies": [
+                "avatar",
+                "badge",
+                "button",
+                "separator",
+                "scroll-area"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "shells"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/shell-03/shell-03.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "login-01",
+            "type": "registry:block",
+            "title": "Email + Password Login",
+            "description": "Clean email/password login form with social auth buttons (Google, Apple, GitHub), remember me checkbox, and sign up link.",
+            "registryDependencies": [
+                "button",
+                "input",
+                "label",
+                "separator",
+                "checkbox"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "authentication"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/login-01/login-01.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "login-02",
+            "type": "registry:block",
+            "title": "Phone + OTP Verification",
+            "description": "Two-step phone verification flow with country selector, 6-digit OTP input with auto-focus, and countdown timer.",
+            "registryDependencies": [
+                "button",
+                "input",
+                "label"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "authentication"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/login-02/login-02.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "login-03",
+            "type": "registry:block",
+            "title": "PIN / Biometric Unlock",
+            "description": "PIN pad with haptic-style dots, Face ID toggle, number keypad, and avatar greeting.",
+            "registryDependencies": [
+                "avatar",
+                "switch",
+                "label"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "authentication"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/login-03/login-03.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "form-01",
+            "type": "registry:block",
+            "title": "Profile Form with Validation",
+            "description": "Profile edit form with avatar upload, real-time validation errors, multiple field types including date picker and textarea.",
+            "registryDependencies": [
+                "button",
+                "input",
+                "label",
+                "textarea",
+                "avatar",
+                "scroll-area"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "forms"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/form-01/form-01.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "form-02",
+            "type": "registry:block",
+            "title": "Multi-Step Wizard Form",
+            "description": "3-step stepper form (Personal → Address → Review) with progress indicator, back/next navigation, and review summary.",
+            "registryDependencies": [
+                "button",
+                "input",
+                "label",
+                "select",
+                "scroll-area",
+                "checkbox"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "forms"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/form-02/form-02.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "form-03",
+            "type": "registry:block",
+            "title": "Search + Filter Form",
+            "description": "Search input with category chips, expandable price/rating filters, active filter badges, and result cards.",
+            "registryDependencies": [
+                "button",
+                "input",
+                "badge",
+                "scroll-area",
+                "card"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "forms"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/form-03/form-03.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "list-01",
+            "type": "registry:block",
+            "title": "Contact Card List",
+            "description": "Vertical contact list with avatars, online status indicators, action buttons (call, message), and unread badges.",
+            "registryDependencies": [
+                "avatar",
+                "input",
+                "scroll-area",
+                "badge"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "lists"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/list-01/list-01.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "list-02",
+            "type": "registry:block",
+            "title": "Product Grid",
+            "description": "2-column product grid with favorites toggle, star ratings, color swatches, sale tags, and add-to-cart buttons.",
+            "registryDependencies": [
+                "button",
+                "badge",
+                "scroll-area"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "lists"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/list-02/list-02.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "list-03",
+            "type": "registry:block",
+            "title": "Settings Page",
+            "description": "Grouped settings sections with profile card, toggle switches, badges, chevron indicators, and destructive actions.",
+            "registryDependencies": [
+                "switch",
+                "scroll-area",
+                "separator",
+                "avatar",
+                "badge"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "lists"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/list-03/list-03.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "filter-01",
+            "type": "registry:block",
+            "title": "Bottom Sheet Filter",
+            "description": "Draggable bottom sheet with price range slider, brand checkboxes, star rating selector, and color swatches.",
+            "registryDependencies": [
+                "button",
+                "checkbox",
+                "label",
+                "separator",
+                "slider",
+                "scroll-area",
+                "badge"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "filters"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/filter-01/filter-01.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "filter-02",
+            "type": "registry:block",
+            "title": "Chip Filter Bar",
+            "description": "Horizontal scrolling filter chips with sort dropdown, active filter count badge, and product result cards.",
+            "registryDependencies": [
+                "badge",
+                "button",
+                "card",
+                "scroll-area"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "filters"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/filter-02/filter-02.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "error-01",
+            "type": "registry:block",
+            "title": "Empty State / 404",
+            "description": "Empty state page with centered illustration icon, descriptive message, and primary/secondary CTA buttons.",
+            "registryDependencies": [
+                "button"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "status"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/error-01/error-01.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "error-02",
+            "type": "registry:block",
+            "title": "Network Error",
+            "description": "Network error page with animated dashed border, retry button with loading spinner state, and help links.",
+            "registryDependencies": [
+                "button"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "status"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/error-02/error-02.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "confirmation-01",
+            "type": "registry:block",
+            "title": "Payment Success",
+            "description": "Success confirmation with animated checkmark, transaction details, copy-to-clipboard, and share receipt button.",
+            "registryDependencies": [
+                "button",
+                "separator"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "status"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/confirmation-01/confirmation-01.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "confirmation-02",
+            "type": "registry:block",
+            "title": "Order Summary",
+            "description": "Order confirmation with item list, price breakdown (subtotal, shipping, tax), delivery estimate, and track order CTA.",
+            "registryDependencies": [
+                "badge",
+                "button",
+                "separator",
+                "scroll-area"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "status"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/confirmation-02/confirmation-02.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "payment-01",
+            "type": "registry:block",
+            "title": "Card Entry Form",
+            "description": "Credit card entry with live card preview, automatic brand detection (Visa/MC/Amex), expiry/CVV fields, and SSL badge.",
+            "registryDependencies": [
+                "button",
+                "input",
+                "label",
+                "checkbox",
+                "scroll-area",
+                "separator"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "payment"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/payment-01/payment-01.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "payment-02",
+            "type": "registry:block",
+            "title": "Payment Method Selection",
+            "description": "Saved cards with radio selection, add new card option, Apple Pay / Google Pay buttons, and order total summary.",
+            "registryDependencies": [
+                "button",
+                "badge",
+                "separator",
+                "scroll-area"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "payment"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/payment-02/payment-02.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "payment-03",
+            "type": "registry:block",
+            "title": "Checkout Flow",
+            "description": "Full 3-step checkout (Shipping → Payment → Review) with animated progress bar, edit links, and order summary.",
+            "registryDependencies": [
+                "button",
+                "input",
+                "label",
+                "separator",
+                "scroll-area",
+                "badge"
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "categories": [
+                "payment"
+            ],
+            "files": [
+                {
+                    "path": "registry/new-york/payment-03/payment-03.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "registry/new-york/_shared/status-bar.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        }
+    ]
+}

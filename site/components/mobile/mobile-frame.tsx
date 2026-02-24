@@ -5,9 +5,10 @@ import React from "react";
 interface MobileFrameProps {
     slug: string;
     className?: string;
+    theme?: "dubai" | "new-york";
 }
 
-export function MobileFrame({ slug, className }: MobileFrameProps) {
+export function MobileFrame({ slug, className, theme = "dubai" }: MobileFrameProps) {
     return (
         <div className={`relative ${className ?? ""}`} style={{ width: 375, aspectRatio: "375/812" }}>
             {/* Phone bezel */}
@@ -23,7 +24,7 @@ export function MobileFrame({ slug, className }: MobileFrameProps) {
 
             {/* iframe content */}
             <iframe
-                src={`/preview/${slug}`}
+                src={`/${theme}/preview/${slug}`}
                 className="absolute inset-[10px] w-[calc(100%-20px)] h-[calc(100%-20px)] rounded-[2.1rem] bg-background overflow-hidden"
                 style={{ border: "none" }}
                 title="Block preview"
@@ -31,3 +32,4 @@ export function MobileFrame({ slug, className }: MobileFrameProps) {
         </div>
     );
 }
+

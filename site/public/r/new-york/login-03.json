@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "login-03",
+  "title": "PIN / Biometric Unlock",
+  "description": "PIN pad with haptic-style dots, Face ID toggle, number keypad, and avatar greeting.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "avatar",
+    "switch",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/login-03/login-03.tsx",
+      "content": "\"use client\";\n\nimport { StatusBar } from \"@/registry/new-york/_shared/status-bar\";\nimport { Fingerprint, Delete } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Avatar, AvatarFallback } from \"@/components/ui/avatar\";\nimport { Switch } from \"@/components/ui/switch\";\nimport { Label } from \"@/components/ui/label\";\n\nexport function Login03() {\n    const [pin, setPin] = useState(\"\");\n    const [useBiometric, setUseBiometric] = useState(true);\n\n    const handleKeyPress = (digit: string) => {\n        if (pin.length < 4) {\n            setPin(pin + digit);\n        }\n    };\n\n    const handleDelete = () => {\n        setPin(pin.slice(0, -1));\n    };\n\n    return (\n        <div className=\"flex flex-col h-full bg-background\">\n            <StatusBar />\n\n            <div className=\"flex-1 flex flex-col items-center px-6 pt-12\">\n                {/* Avatar & Greeting */}\n                <Avatar className=\"h-20 w-20 mb-4\">\n                    <AvatarFallback className=\"bg-primary text-primary-foreground text-2xl font-semibold\">\n                        JD\n                    </AvatarFallback>\n                </Avatar>\n                <h1 className=\"text-lg font-semibold\">Welcome back, John</h1>\n                <p className=\"text-sm text-muted-foreground mt-1\">Enter your PIN to continue</p>\n\n                {/* PIN Dots */}\n                <div className=\"flex gap-4 mt-8 mb-2\">\n                    {[0, 1, 2, 3].map((i) => (\n                        <div\n                            key={i}\n                            className={`w-4 h-4 rounded-full transition-all duration-200 ${i < pin.length\n                                    ? \"bg-primary scale-110\"\n                                    : \"border-2 border-muted-foreground/30\"\n                                }`}\n                        />\n                    ))}\n                </div>\n\n                {pin.length === 4 && (\n                    <p className=\"text-xs text-destructive mt-2 animate-in fade-in\">Incorrect PIN. Try again.</p>\n                )}\n\n                {/* Biometric Toggle */}\n                <div className=\"flex items-center gap-3 mt-6 mb-2\">\n                    <Fingerprint className=\"h-5 w-5 text-muted-foreground\" />\n                    <Label htmlFor=\"biometric\" className=\"text-sm text-muted-foreground cursor-pointer\">\n                        Use Face ID\n                    </Label>\n                    <Switch id=\"biometric\" checked={useBiometric} onCheckedChange={setUseBiometric} />\n                </div>\n            </div>\n\n            {/* PIN Pad */}\n            <div className=\"px-12 pb-10\">\n                <div className=\"grid grid-cols-3 gap-4\">\n                    {[\"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"\", \"0\", \"del\"].map((key) => (\n                        <button\n                            key={key}\n                            onClick={() => {\n                                if (key === \"del\") handleDelete();\n                                else if (key !== \"\") handleKeyPress(key);\n                            }}\n                            className={`h-16 rounded-2xl flex items-center justify-center text-xl font-medium transition-all active:scale-95 ${key === \"\"\n                                    ? \"invisible\"\n                                    : key === \"del\"\n                                        ? \"text-muted-foreground hover:bg-muted\"\n                                        : \"bg-muted/60 hover:bg-muted active:bg-muted\"\n                                }`}\n                        >\n                            {key === \"del\" ? (\n                                <Delete className=\"h-5 w-5\" />\n                            ) : (\n                                key\n                            )}\n                        </button>\n                    ))}\n                </div>\n\n                <button className=\"w-full text-center mt-4 text-sm text-muted-foreground hover:text-primary transition-colors\">\n                    Forgot PIN?\n                </button>\n            </div>\n        </div>\n    );\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/new-york/_shared/status-bar.tsx",
+      "content": "\"use client\";\n\nimport { Signal, Wifi, Battery } from \"lucide-react\";\n\nexport function StatusBar() {\n    return (\n        <div className=\"flex items-center justify-between px-6 pt-3 pb-1\">\n            <span className=\"text-sm font-semibold\">9:41</span>\n            <div className=\"flex items-center gap-1.5\">\n                <Signal className=\"h-3.5 w-3.5\" />\n                <Wifi className=\"h-3.5 w-3.5\" />\n                <Battery className=\"h-3.5 w-3.5\" />\n            </div>\n        </div>\n    );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "authentication"
+  ],
+  "type": "registry:block"
+}

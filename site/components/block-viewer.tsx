@@ -15,6 +15,7 @@ interface BlockViewerProps {
     category: string;
     registryDependencies?: string[];
     code: string;
+    theme?: "dubai" | "new-york";
 }
 
 export function BlockViewer({
@@ -24,6 +25,7 @@ export function BlockViewer({
     category,
     registryDependencies,
     code,
+    theme = "dubai",
 }: BlockViewerProps) {
     const [copied, setCopied] = useState(false);
     const [copiedInstall, setCopiedInstall] = useState(false);
@@ -34,13 +36,13 @@ export function BlockViewer({
         setTimeout(() => setter(false), 2000);
     };
 
-    const installCommand = `npx shadcn add "${typeof window !== "undefined" ? window.location.origin : ""}/r/${name}.json"`;
+    const installCommand = `npx shadcn add "${typeof window !== "undefined" ? window.location.origin : ""}/r/${theme}/${name}.json"`;
 
     return (
         <div className="flex h-[calc(100vh-3.5rem)] overflow-hidden">
             {/* Left column — device preview via iframe */}
             <div className="w-[440px] shrink-0 flex items-center justify-center bg-muted/20">
-                <MobileFrame slug={name} className="h-[min(calc(100vh-6rem),812px)]" />
+                <MobileFrame slug={name} className="h-[min(calc(100vh-6rem),812px)]" theme={theme} />
             </div>
 
             {/* Right column — block info + code */}
@@ -141,7 +143,7 @@ export function BlockViewer({
                                 <div className="overflow-auto">
                                     <pre className="p-4 text-sm">
                                         <code className="text-zinc-300 font-mono text-[13px] leading-relaxed whitespace-pre">
-                                            {`import { ${toPascalCase(name)} } from "@/registry/dubai/${name}/${name}"
+                                            {`import { ${toPascalCase(name)} } from "@/registry/${theme}/${name}/${name}"
 
 export default function Page() {
   return <${toPascalCase(name)} />
@@ -164,3 +166,4 @@ function toPascalCase(str: string): string {
         .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
         .join("");
 }
+

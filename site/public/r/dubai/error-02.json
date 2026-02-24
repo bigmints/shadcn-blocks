@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "error-02",
+  "title": "Network Error",
+  "description": "Network error page with animated dashed border, retry button with loading spinner state, and help links.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/dubai/error-02/error-02.tsx",
+      "content": "\"use client\";\n\nimport { StatusBar } from \"@/registry/dubai/_shared/status-bar\";\nimport { WifiOff, RefreshCw } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\n\nexport function Error02() {\n    const [loading, setLoading] = useState(false);\n\n    const handleRetry = () => {\n        setLoading(true);\n        setTimeout(() => setLoading(false), 2000);\n    };\n\n    return (\n        <div className=\"flex flex-col h-full bg-background\">\n            <StatusBar />\n\n            <div className=\"flex-1 flex flex-col items-center justify-center px-8 pb-20\">\n                {/* Icon */}\n                <div className=\"relative mb-8\">\n                    <div className=\"w-24 h-24 rounded-full bg-destructive/10 flex items-center justify-center\">\n                        <WifiOff className=\"h-10 w-10 text-destructive/60\" />\n                    </div>\n                    <div className=\"absolute inset-0 rounded-full border-2 border-dashed border-destructive/20 animate-spin\" style={{ animationDuration: '8s' }} />\n                </div>\n\n                {/* Text */}\n                <h2 className=\"text-xl font-bold text-center\">No Connection</h2>\n                <p className=\"text-sm text-muted-foreground text-center mt-2 leading-relaxed max-w-[260px]\">\n                    Please check your internet connection and try again. Your data is safe.\n                </p>\n\n                {/* Retry Button */}\n                <Button\n                    className=\"mt-8 h-11 px-8 font-medium gap-2\"\n                    onClick={handleRetry}\n                    disabled={loading}\n                >\n                    <RefreshCw className={`h-4 w-4 ${loading ? \"animate-spin\" : \"\"}`} />\n                    {loading ? \"Retrying...\" : \"Try Again\"}\n                </Button>\n\n                {/* Secondary actions */}\n                <div className=\"flex gap-4 mt-4\">\n                    <button className=\"text-xs text-muted-foreground hover:text-primary transition-colors\">\n                        Help Center\n                    </button>\n                    <span className=\"text-xs text-muted-foreground\">·</span>\n                    <button className=\"text-xs text-muted-foreground hover:text-primary transition-colors\">\n                        Report Issue\n                    </button>\n                </div>\n            </div>\n        </div>\n    );\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/dubai/_shared/status-bar.tsx",
+      "content": "\"use client\";\n\nimport { Signal, Wifi, Battery } from \"lucide-react\";\n\nexport function StatusBar() {\n    return (\n        <div className=\"flex items-center justify-between px-6 pt-3 pb-1\">\n            <span className=\"text-sm font-semibold\">9:41</span>\n            <div className=\"flex items-center gap-1.5\">\n                <Signal className=\"h-3.5 w-3.5\" />\n                <Wifi className=\"h-3.5 w-3.5\" />\n                <Battery className=\"h-3.5 w-3.5\" />\n            </div>\n        </div>\n    );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "status"
+  ],
+  "type": "registry:block"
+}
