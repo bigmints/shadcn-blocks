@@ -9,19 +9,19 @@ import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const savedCards = [
-    { id: "visa", brand: "Visa", last4: "4242", expiry: "12/28", isDefault: true },
-    { id: "mc", brand: "Mastercard", last4: "8910", expiry: "06/27", isDefault: false },
-    { id: "amex", brand: "Amex", last4: "3782", expiry: "09/26", isDefault: false },
+    { id: "card-1", brand: "Card A", last4: "0001", expiry: "MM/YY", isDefault: true },
+    { id: "card-2", brand: "Card B", last4: "0002", expiry: "MM/YY", isDefault: false },
+    { id: "card-3", brand: "Card C", last4: "0003", expiry: "MM/YY", isDefault: false },
 ];
 
-const brandColors: Record<string, string> = {
-    Visa: "from-blue-600 to-blue-800",
-    Mastercard: "from-red-500 to-orange-500",
-    Amex: "from-zinc-600 to-zinc-800",
+const brandGradients: Record<string, string> = {
+    "Card A": "from-blue-600 to-blue-800",
+    "Card B": "from-red-500 to-orange-500",
+    "Card C": "from-zinc-600 to-zinc-800",
 };
 
 export function Payment02() {
-    const [selected, setSelected] = useState("visa");
+    const [selected, setSelected] = useState("card-1");
 
     return (
         <div className="flex flex-col h-full bg-background">
@@ -46,12 +46,12 @@ export function Payment02() {
                                     key={card.id}
                                     onClick={() => setSelected(card.id)}
                                     className={`w-full flex items-center gap-3.5 p-3.5 rounded-xl border transition-all ${selected === card.id
-                                            ? "border-primary bg-primary/[0.03] ring-1 ring-primary/20"
-                                            : "hover:bg-muted/50"
+                                        ? "border-primary bg-primary/[0.03] ring-1 ring-primary/20"
+                                        : "hover:bg-muted/50"
                                         }`}
                                 >
                                     {/* Card Icon */}
-                                    <div className={`w-12 h-8 rounded-md bg-gradient-to-br ${brandColors[card.brand]} flex items-center justify-center shrink-0`}>
+                                    <div className={`w-12 h-8 rounded-md bg-gradient-to-br ${brandGradients[card.brand] ?? "from-zinc-600 to-zinc-800"} flex items-center justify-center shrink-0`}>
                                         <CreditCard className="h-4 w-4 text-white" />
                                     </div>
                                     <div className="flex-1 text-left">
@@ -104,20 +104,20 @@ export function Payment02() {
                         <h3 className="text-sm font-semibold mb-1">Order Summary</h3>
                         <div className="flex justify-between text-sm">
                             <span className="text-muted-foreground">Subtotal</span>
-                            <span>AED 752</span>
+                            <span>Value</span>
                         </div>
                         <div className="flex justify-between text-sm">
                             <span className="text-muted-foreground">Shipping</span>
-                            <span className="text-emerald-600 font-medium">Free</span>
+                            <span>Value</span>
                         </div>
                         <div className="flex justify-between text-sm">
                             <span className="text-muted-foreground">Tax</span>
-                            <span>AED 68</span>
+                            <span>Value</span>
                         </div>
                         <Separator />
                         <div className="flex justify-between">
                             <span className="font-semibold">Total</span>
-                            <span className="font-bold text-lg">AED 820</span>
+                            <span className="font-bold text-lg">Total Amount</span>
                         </div>
                     </div>
                 </div>
@@ -126,7 +126,7 @@ export function Payment02() {
             {/* Pay Now */}
             <div className="border-t px-5 py-4 pb-8">
                 <Button className="w-full h-12 font-semibold text-base">
-                    Pay AED 820
+                    Pay Total Amount
                 </Button>
             </div>
         </div>

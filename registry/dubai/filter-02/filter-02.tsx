@@ -1,30 +1,23 @@
 "use client";
 
 import { StatusBar } from "@/registry/dubai/_shared/status-bar";
-import { ChevronDown, X, ArrowUpDown, Star } from "lucide-react";
+import { ChevronDown, X, ArrowUpDown } from "lucide-react";
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const filterChips = [
-    { id: "category", label: "Category", options: ["Electronics", "Clothing", "Home"], selected: "Electronics" },
-    { id: "brand", label: "Brand", options: ["All Brands", "Apple", "Samsung"], selected: null },
-    { id: "price", label: "Price", options: ["Any", "Under AED 184", "AED 184-367"], selected: "Under AED 184" },
-    { id: "rating", label: "Rating", options: ["Any", "4+", "3+"], selected: "4+" },
-    { id: "shipping", label: "Shipping", options: ["Any", "Free", "Express"], selected: null },
-    { id: "condition", label: "Condition", options: ["Any", "New", "Refurbished"], selected: null },
+    { id: "filter-1", label: "Filter 1", selected: "Active" },
+    { id: "filter-2", label: "Filter 2", selected: null },
+    { id: "filter-3", label: "Filter 3", selected: "Value" },
+    { id: "filter-4", label: "Filter 4", selected: "Option A" },
+    { id: "filter-5", label: "Filter 5", selected: null },
 ];
 
-const sortOptions = ["Most Relevant", "Price: Low to High", "Price: High to Low", "Newest", "Best Rated"];
+const sortOptions = ["Most Relevant", "Option A", "Option B", "Option C"];
 
-const items = [
-    { name: "AirPods Pro 3", desc: "Active noise cancellation", price: "AED 915", rating: "4.9", reviews: "12.5k", color: "from-blue-100 to-blue-50" },
-    { name: "Galaxy Buds Ultra", desc: "360 Audio with ANC", price: "AED 731", rating: "4.7", reviews: "8.2k", color: "from-violet-100 to-violet-50" },
-    { name: "USB-C Hub Adapter", desc: "7-in-1 multiport adapter", price: "AED 129", rating: "4.5", reviews: "3.1k", color: "from-amber-100 to-amber-50" },
-    { name: "Mechanical Keyboard", desc: "Wireless 75% layout", price: "AED 327", rating: "4.8", reviews: "2.4k", color: "from-emerald-100 to-emerald-50" },
-    { name: "Portable SSD 2TB", desc: "USB 3.2 up to 2000MB/s", price: "AED 548", rating: "4.6", reviews: "5.8k", color: "from-rose-100 to-rose-50" },
-];
+
 
 export function Filter02() {
     const [chips, setChips] = useState(filterChips);
@@ -43,8 +36,8 @@ export function Filter02() {
 
             {/* Header */}
             <div className="px-4 pt-4 pb-2">
-                <h1 className="text-xl font-bold tracking-tight">Results</h1>
-                <p className="text-xs text-muted-foreground mt-0.5">156 items found</p>
+                <h1 className="text-xl font-bold tracking-tight">List Title</h1>
+                <p className="text-xs text-muted-foreground mt-0.5">N items found</p>
             </div>
 
             {/* Horizontal Filter Chips */}
@@ -109,28 +102,10 @@ export function Filter02() {
                 </div>
             )}
 
-            {/* Results — horizontal product cards */}
+            {/* Results list */}
             <ScrollArea className="flex-1">
-                <div className="px-4 py-3 space-y-2.5">
-                    {items.map((item, i) => (
-                        <div key={i} className="flex gap-3 rounded-xl border p-2.5">
-                            <div className={`w-20 h-20 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center shrink-0`}>
-                                <div className="w-8 h-8 rounded-lg bg-white/50" />
-                            </div>
-                            <div className="flex-1 min-w-0 py-0.5">
-                                <p className="text-sm font-medium truncate">{item.name}</p>
-                                <p className="text-[11px] text-muted-foreground mt-0.5">{item.desc}</p>
-                                <div className="flex items-center gap-2 mt-1.5">
-                                    <span className="text-sm font-bold">{item.price}</span>
-                                    <div className="flex items-center gap-0.5">
-                                        <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
-                                        <span className="text-[10px] font-medium">{item.rating}</span>
-                                    </div>
-                                    <span className="text-[10px] text-muted-foreground">({item.reviews})</span>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                <div className="px-4 py-3 space-y-2.5 flex flex-col items-center justify-center h-full text-muted-foreground">
+                    <p className="text-xs italic">Content goes here</p>
                 </div>
             </ScrollArea>
         </div>

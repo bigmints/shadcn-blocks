@@ -1,6 +1,7 @@
 "use client";
 
 import { BlockViewer } from "@/components/block-viewer";
+import type { Theme } from "@/components/blocks-layout";
 
 interface BlockMeta {
     name: string;
@@ -17,7 +18,7 @@ export function BlockViewerPage({
 }: {
     meta: BlockMeta;
     code: string;
-    theme: "dubai" | "new-york";
+    theme: Theme;
 }) {
     return (
         <BlockViewer

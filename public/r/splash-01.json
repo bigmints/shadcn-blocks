@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "splash-01",
+  "title": "Splash Screen",
+  "description": "Minimal splash screen with app logo, title, and circular loading spinner.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/dubai/splash-01/splash-01.tsx",
+      "content": "\"use client\";\n\nimport { StatusBar } from \"@/registry/dubai/_shared/status-bar\";\nimport { Loader2 } from \"lucide-react\";\n\nexport function Splash01() {\n    return (\n        <div className=\"flex flex-col h-full bg-background\">\n            <StatusBar />\n\n            <div className=\"flex-1 flex flex-col items-center justify-center gap-6\">\n                {/* App Icon */}\n                <div className=\"w-16 h-16 rounded-2xl bg-primary flex items-center justify-center\">\n                    <span className=\"text-primary-foreground font-bold text-2xl\">V</span>\n                </div>\n\n                {/* App Name */}\n                <h1 className=\"text-xl font-bold tracking-tight\">Vortex</h1>\n\n                {/* Circular Spinner */}\n                <Loader2 className=\"h-5 w-5 animate-spin text-muted-foreground\" />\n            </div>\n        </div>\n    );\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/dubai/_shared/status-bar.tsx",
+      "content": "\"use client\";\n\nimport { Signal, Wifi, Battery } from \"lucide-react\";\n\nexport function StatusBar() {\n    return (\n        <div className=\"flex items-center justify-between px-6 pt-3 pb-1\">\n            <span className=\"text-sm font-semibold\">9:41</span>\n            <div className=\"flex items-center gap-1.5\">\n                <Signal className=\"h-3.5 w-3.5\" />\n                <Wifi className=\"h-3.5 w-3.5\" />\n                <Battery className=\"h-3.5 w-3.5\" />\n            </div>\n        </div>\n    );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "onboarding"
+  ],
+  "type": "registry:block"
+}

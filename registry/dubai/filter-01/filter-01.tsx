@@ -11,41 +11,41 @@ import { Slider } from "@/components/ui/slider";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 
-const brands = [
-    { name: "Apple", count: 42 },
-    { name: "Samsung", count: 38 },
-    { name: "Sony", count: 24 },
-    { name: "Bose", count: 18 },
-    { name: "JBL", count: 15 },
+const options = [
+    { name: "Option 1", count: 42 },
+    { name: "Option 2", count: 38 },
+    { name: "Option 3", count: 24 },
+    { name: "Option 4", count: 18 },
+    { name: "Option 5", count: 15 },
 ];
 
-const colorSwatches = [
-    { name: "Black", color: "bg-zinc-900" },
-    { name: "White", color: "bg-white border" },
-    { name: "Navy", color: "bg-blue-900" },
-    { name: "Red", color: "bg-red-500" },
-    { name: "Gold", color: "bg-amber-400" },
-    { name: "Green", color: "bg-emerald-600" },
+const swatches = [
+    { name: "Swatch A", color: "bg-zinc-900" },
+    { name: "Swatch B", color: "bg-white border" },
+    { name: "Swatch C", color: "bg-blue-900" },
+    { name: "Swatch D", color: "bg-red-500" },
+    { name: "Swatch E", color: "bg-amber-400" },
+    { name: "Swatch F", color: "bg-emerald-600" },
 ];
 
 export function Filter01() {
     const [priceRange, setPriceRange] = useState([25, 200]);
-    const [selectedBrands, setSelectedBrands] = useState<Set<string>>(new Set(["Apple", "Sony"]));
+    const [selectedOptions, setSelectedOptions] = useState<Set<string>>(new Set(["Option 1", "Option 3"]));
     const [selectedRating, setSelectedRating] = useState(4);
-    const [selectedColors, setSelectedColors] = useState<Set<string>>(new Set(["Black"]));
+    const [selectedSwatches, setSelectedSwatches] = useState<Set<string>>(new Set(["Swatch A"]));
 
-    const toggleBrand = (brand: string) => {
-        const newBrands = new Set(selectedBrands);
-        if (newBrands.has(brand)) newBrands.delete(brand);
-        else newBrands.add(brand);
-        setSelectedBrands(newBrands);
+    const toggleOption = (name: string) => {
+        const next = new Set(selectedOptions);
+        if (next.has(name)) next.delete(name);
+        else next.add(name);
+        setSelectedOptions(next);
     };
 
-    const toggleColor = (color: string) => {
-        const newColors = new Set(selectedColors);
-        if (newColors.has(color)) newColors.delete(color);
-        else newColors.add(color);
-        setSelectedColors(newColors);
+    const toggleSwatch = (name: string) => {
+        const next = new Set(selectedSwatches);
+        if (next.has(name)) next.delete(name);
+        else next.add(name);
+        setSelectedSwatches(next);
     };
 
     return (
@@ -68,12 +68,12 @@ export function Filter01() {
 
             <ScrollArea className="flex-1">
                 <div className="px-5 py-5 space-y-6">
-                    {/* Price Range */}
+                    {/* Range Slider */}
                     <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                            <h3 className="text-sm font-semibold">Price Range</h3>
+                            <h3 className="text-sm font-semibold">Range Filter</h3>
                             <span className="text-xs text-muted-foreground">
-                                ${priceRange[0]} — ${priceRange[1]}
+                                {priceRange[0]} — {priceRange[1]}
                             </span>
                         </div>
                         <Slider
@@ -85,28 +85,28 @@ export function Filter01() {
                             className="w-full"
                         />
                         <div className="flex justify-between text-[10px] text-muted-foreground">
-                            <span>AED 0</span>
-                            <span>AED 1,835</span>
+                            <span>Min</span>
+                            <span>Max</span>
                         </div>
                     </div>
 
                     <Separator />
 
-                    {/* Brand */}
+                    {/* Options Checklist */}
                     <div className="space-y-3">
-                        <h3 className="text-sm font-semibold">Brand</h3>
+                        <h3 className="text-sm font-semibold">Options</h3>
                         <div className="space-y-2.5">
-                            {brands.map((brand) => (
-                                <div key={brand.name} className="flex items-center gap-3">
+                            {options.map((opt) => (
+                                <div key={opt.name} className="flex items-center gap-3">
                                     <Checkbox
-                                        id={`brand-${brand.name}`}
-                                        checked={selectedBrands.has(brand.name)}
-                                        onCheckedChange={() => toggleBrand(brand.name)}
+                                        id={`opt-${opt.name}`}
+                                        checked={selectedOptions.has(opt.name)}
+                                        onCheckedChange={() => toggleOption(opt.name)}
                                     />
-                                    <Label htmlFor={`brand-${brand.name}`} className="flex-1 text-sm font-normal cursor-pointer">
-                                        {brand.name}
+                                    <Label htmlFor={`opt-${opt.name}`} className="flex-1 text-sm font-normal cursor-pointer">
+                                        {opt.name}
                                     </Label>
-                                    <span className="text-xs text-muted-foreground">{brand.count}</span>
+                                    <span className="text-xs text-muted-foreground">{opt.count}</span>
                                 </div>
                             ))}
                         </div>
@@ -123,8 +123,8 @@ export function Filter01() {
                                     key={rating}
                                     onClick={() => setSelectedRating(rating)}
                                     className={`flex-1 py-2.5 rounded-lg text-center text-sm font-medium transition-all ${selectedRating === rating
-                                            ? "bg-primary text-primary-foreground"
-                                            : "border hover:bg-muted"
+                                        ? "bg-primary text-primary-foreground"
+                                        : "border hover:bg-muted"
                                         }`}
                                 >
                                     {rating}★
@@ -135,17 +135,17 @@ export function Filter01() {
 
                     <Separator />
 
-                    {/* Colors */}
+                    {/* Swatches */}
                     <div className="space-y-3">
-                        <h3 className="text-sm font-semibold">Color</h3>
+                        <h3 className="text-sm font-semibold">Swatch Picker</h3>
                         <div className="flex gap-3">
-                            {colorSwatches.map((swatch) => (
+                            {swatches.map((swatch) => (
                                 <button
                                     key={swatch.name}
-                                    onClick={() => toggleColor(swatch.name)}
+                                    onClick={() => toggleSwatch(swatch.name)}
                                     className="flex flex-col items-center gap-1.5"
                                 >
-                                    <div className={`w-8 h-8 rounded-full ${swatch.color} ${selectedColors.has(swatch.name) ? "ring-2 ring-primary ring-offset-2" : ""
+                                    <div className={`w-8 h-8 rounded-full ${swatch.color} ${selectedSwatches.has(swatch.name) ? "ring-2 ring-primary ring-offset-2" : ""
                                         } transition-all`} />
                                     <span className="text-[10px] text-muted-foreground">{swatch.name}</span>
                                 </button>
@@ -161,7 +161,7 @@ export function Filter01() {
                     Clear All
                 </Button>
                 <Button className="flex-1 h-11 font-medium">
-                    Show 24 Results
+                    Show Results
                 </Button>
             </div>
         </div>

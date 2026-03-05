@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "onboarding-01",
+  "title": "Onboarding Slider",
+  "description": "Fullscreen paged onboarding slider with illustration, title, description, dot indicators, and Get Started button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/dubai/onboarding-01/onboarding-01.tsx",
+      "content": "\"use client\";\n\nimport { StatusBar } from \"@/registry/dubai/_shared/status-bar\";\nimport { ChevronRight, Layers, ShieldCheck, Zap } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\n\nconst slides = [\n    {\n        icon: Layers,\n        title: \"Beautiful Components\",\n        description: \"Production-ready mobile UI blocks built with shadcn/ui. Copy, paste, and ship.\",\n    },\n    {\n        icon: ShieldCheck,\n        title: \"9 City Themes\",\n        description: \"Switch between Dubai, New York, London, and more — each with its own color palette.\",\n    },\n    {\n        icon: Zap,\n        title: \"Ready to Go\",\n        description: \"Install with the CLI, customize to fit your brand, and deploy in minutes.\",\n    },\n];\n\nexport function Onboarding01() {\n    const [current, setCurrent] = useState(0);\n    const slide = slides[current];\n    const Icon = slide.icon;\n    const isLast = current === slides.length - 1;\n\n    return (\n        <div className=\"flex flex-col h-full bg-background\">\n            <StatusBar />\n\n            {/* Image / Illustration area */}\n            <div className=\"flex-1 flex items-center justify-center bg-muted/40\">\n                <div className=\"w-24 h-24 rounded-3xl bg-primary/10 flex items-center justify-center\">\n                    <Icon className=\"h-12 w-12 text-primary\" strokeWidth={1.5} />\n                </div>\n            </div>\n\n            {/* Content area */}\n            <div className=\"px-6 pt-8 pb-10 space-y-6 flex flex-col items-center text-center\">\n                <div className=\"space-y-2\">\n                    <h2 className=\"text-2xl font-bold tracking-tight\">{slide.title}</h2>\n                    <p className=\"text-sm text-muted-foreground leading-relaxed\">\n                        {slide.description}\n                    </p>\n                </div>\n\n                {/* Page indicator */}\n                <div className=\"flex items-center justify-center gap-2\">\n                    {slides.map((_, i) => (\n                        <div\n                            key={i}\n                            className={`h-1.5 rounded-full transition-all duration-200 ${i === current\n                                ? \"w-6 bg-primary\"\n                                : \"w-1.5 bg-muted-foreground/20\"\n                                }`}\n                        />\n                    ))}\n                </div>\n\n                {/* Action */}\n                <Button\n                    className=\"w-full h-12 font-medium\"\n                    onClick={() => {\n                        if (!isLast) setCurrent((s) => s + 1);\n                    }}\n                >\n                    {isLast ? \"Get Started\" : \"Continue\"}\n                    <ChevronRight className=\"ml-1 h-4 w-4\" />\n                </Button>\n            </div>\n        </div>\n    );\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/dubai/_shared/status-bar.tsx",
+      "content": "\"use client\";\n\nimport { Signal, Wifi, Battery } from \"lucide-react\";\n\nexport function StatusBar() {\n    return (\n        <div className=\"flex items-center justify-between px-6 pt-3 pb-1\">\n            <span className=\"text-sm font-semibold\">9:41</span>\n            <div className=\"flex items-center gap-1.5\">\n                <Signal className=\"h-3.5 w-3.5\" />\n                <Wifi className=\"h-3.5 w-3.5\" />\n                <Battery className=\"h-3.5 w-3.5\" />\n            </div>\n        </div>\n    );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "onboarding"
+  ],
+  "type": "registry:block"
+}

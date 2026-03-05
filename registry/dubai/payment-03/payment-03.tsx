@@ -47,10 +47,10 @@ export function Payment03() {
                     {steps.map((step, i) => (
                         <div key={step.label} className="relative z-10 flex flex-col items-center gap-1.5">
                             <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${i < currentStep
-                                    ? "bg-primary text-primary-foreground"
-                                    : i === currentStep
-                                        ? "bg-primary text-primary-foreground ring-4 ring-primary/20"
-                                        : "bg-muted text-muted-foreground"
+                                ? "bg-primary text-primary-foreground"
+                                : i === currentStep
+                                    ? "bg-primary text-primary-foreground ring-4 ring-primary/20"
+                                    : "bg-muted text-muted-foreground"
                                 }`}>
                                 {i < currentStep ? <Check className="h-4 w-4" /> : <step.icon className="h-4 w-4" />}
                             </div>
@@ -71,33 +71,33 @@ export function Payment03() {
                                 <div className="grid grid-cols-2 gap-3">
                                     <div className="space-y-2">
                                         <Label className="text-sm font-medium">First Name</Label>
-                                        <Input className="h-11" defaultValue="John" />
+                                        <Input className="h-11" placeholder="First Name" />
                                     </div>
                                     <div className="space-y-2">
                                         <Label className="text-sm font-medium">Last Name</Label>
-                                        <Input className="h-11" defaultValue="Doe" />
+                                        <Input className="h-11" placeholder="Last Name" />
                                     </div>
                                 </div>
                                 <div className="space-y-2">
                                     <Label className="text-sm font-medium">Address</Label>
-                                    <Input className="h-11" defaultValue="123 Sheikh Zayed Road" />
+                                    <Input className="h-11" placeholder="Street address" />
                                 </div>
                                 <div className="space-y-2">
                                     <Label className="text-sm font-medium">Apt / Suite</Label>
-                                    <Input className="h-11" defaultValue="Apt 4B" />
+                                    <Input className="h-11" placeholder="Apt / Suite" />
                                 </div>
                                 <div className="grid grid-cols-3 gap-3">
                                     <div className="space-y-2 col-span-1">
                                         <Label className="text-sm font-medium">City</Label>
-                                        <Input className="h-11" defaultValue="NYC" />
+                                        <Input className="h-11" placeholder="City" />
                                     </div>
                                     <div className="space-y-2">
                                         <Label className="text-sm font-medium">State</Label>
-                                        <Input className="h-11" defaultValue="NY" />
+                                        <Input className="h-11" placeholder="State" />
                                     </div>
                                     <div className="space-y-2">
                                         <Label className="text-sm font-medium">ZIP</Label>
-                                        <Input className="h-11" defaultValue="10001" />
+                                        <Input className="h-11" placeholder="ZIP" />
                                     </div>
                                 </div>
                             </div>
@@ -111,12 +111,12 @@ export function Payment03() {
                             <div className="space-y-4">
                                 <div className="space-y-2">
                                     <Label className="text-sm font-medium">Card Number</Label>
-                                    <Input className="h-11 font-mono" placeholder="0000 0000 0000 0000" defaultValue="4242 4242 4242 4242" />
+                                    <Input className="h-11 font-mono" placeholder="0000 0000 0000 0000" />
                                 </div>
                                 <div className="grid grid-cols-2 gap-3">
                                     <div className="space-y-2">
                                         <Label className="text-sm font-medium">Expiry</Label>
-                                        <Input className="h-11" placeholder="MM/YY" defaultValue="12/28" />
+                                        <Input className="h-11" placeholder="MM/YY" />
                                     </div>
                                     <div className="space-y-2">
                                         <Label className="text-sm font-medium">CVV</Label>
@@ -125,7 +125,7 @@ export function Payment03() {
                                 </div>
                                 <div className="space-y-2">
                                     <Label className="text-sm font-medium">Name on Card</Label>
-                                    <Input className="h-11" defaultValue="Khalid Al Maktoum" />
+                                    <Input className="h-11" placeholder="Name on card" />
                                 </div>
                             </div>
                         </>
@@ -145,7 +145,7 @@ export function Payment03() {
                                         <Pencil className="h-3 w-3" /> Edit
                                     </button>
                                 </div>
-                                <p className="text-sm text-muted-foreground">Khalid Al Maktoum<br />123 Sheikh Zayed Road, Apt 4B<br />Dubai, Dubai, UAE</p>
+                                <p className="text-sm text-muted-foreground">Recipient Name<br />Street Address, Unit<br />City, State, Country</p>
                             </div>
 
                             <div className="rounded-xl border p-4 space-y-2">
@@ -157,7 +157,7 @@ export function Payment03() {
                                         <Pencil className="h-3 w-3" /> Edit
                                     </button>
                                 </div>
-                                <p className="text-sm text-muted-foreground">Visa •••• 4242<br />Expires 12/28</p>
+                                <p className="text-sm text-muted-foreground">Card Brand •••• XXXX<br />Expires MM/YY</p>
                             </div>
 
                             <div className="rounded-xl border overflow-hidden">
@@ -165,8 +165,8 @@ export function Payment03() {
                                     <h3 className="text-sm font-semibold">Items</h3>
                                 </div>
                                 {[
-                                    { name: "Wireless Headphones", qty: 1, price: "AED 550" },
-                                    { name: "USB-C Cable × 2", qty: 2, price: "AED 92" },
+                                    { name: "Item Name × Qty", qty: 1, price: "Value" },
+                                    { name: "Item Name × Qty", qty: 2, price: "Value" },
                                 ].map((item, i) => (
                                     <div key={i} className="flex justify-between px-4 py-2.5 text-sm border-t">
                                         <span className="text-muted-foreground">{item.name}</span>
@@ -176,7 +176,7 @@ export function Payment03() {
                                 <Separator />
                                 <div className="flex justify-between px-4 py-3">
                                     <span className="font-semibold text-sm">Total</span>
-                                    <span className="font-bold">AED 643</span>
+                                    <span className="font-bold">Total Amount</span>
                                 </div>
                             </div>
 
@@ -199,7 +199,7 @@ export function Payment03() {
                     className="flex-1 h-11 font-medium"
                     onClick={() => currentStep < 2 && setCurrentStep(currentStep + 1)}
                 >
-                    {currentStep === 2 ? "Place Order — AED 643" : "Continue"}
+                    {currentStep === 2 ? "Place Order" : "Continue"}
                 </Button>
             </div>
         </div>

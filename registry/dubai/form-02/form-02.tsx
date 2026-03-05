@@ -1,7 +1,7 @@
 "use client";
 
 import { StatusBar } from "@/registry/dubai/_shared/status-bar";
-import { ChevronLeft, Check } from "lucide-react";
+import { ChevronLeft, Check, User, MapPin, ClipboardList } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,7 +10,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Checkbox } from "@/components/ui/checkbox";
 
-const steps = ["Personal", "Address", "Review"];
+const steps = [
+    { label: "Personal", icon: User },
+    { label: "Address", icon: MapPin },
+    { label: "Review", icon: ClipboardList },
+];
 
 export function Form02() {
     const [currentStep, setCurrentStep] = useState(0);
@@ -27,37 +31,31 @@ export function Form02() {
                 >
                     <ChevronLeft className="h-5 w-5" />
                 </button>
-                <div className="flex-1">
-                    <h1 className="font-semibold text-sm">Create Account</h1>
-                    <p className="text-[10px] text-muted-foreground">Step {currentStep + 1} of {steps.length}</p>
-                </div>
+                <h1 className="font-semibold">Multi-step Form</h1>
             </div>
 
             {/* Step Indicator */}
-            <div className="px-6 pt-5 pb-2">
-                <div className="flex items-center gap-2">
+            <div className="px-8 py-4 border-b">
+                <div className="flex items-center justify-between relative">
+                    {/* Progress Line */}
+                    <div className="absolute top-4 left-4 right-4 h-0.5 bg-muted" />
+                    <div
+                        className="absolute top-4 left-4 h-0.5 bg-primary transition-all duration-500"
+                        style={{ width: `${(currentStep / (steps.length - 1)) * (100 - 10)}%` }}
+                    />
+
                     {steps.map((step, i) => (
-                        <div key={step} className="flex items-center gap-2 flex-1">
-                            <div className="flex items-center gap-2 flex-1">
-                                <div
-                                    className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium shrink-0 transition-all ${i < currentStep
-                                            ? "bg-primary text-primary-foreground"
-                                            : i === currentStep
-                                                ? "bg-primary text-primary-foreground ring-4 ring-primary/20"
-                                                : "bg-muted text-muted-foreground"
-                                        }`}
-                                >
-                                    {i < currentStep ? <Check className="h-4 w-4" /> : i + 1}
-                                </div>
-                                <span className={`text-xs font-medium hidden min-[340px]:block ${i <= currentStep ? "text-foreground" : "text-muted-foreground"
-                                    }`}>
-                                    {step}
-                                </span>
+                        <div key={step.label} className="relative z-10 flex flex-col items-center gap-1.5">
+                            <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${i < currentStep
+                                ? "bg-primary text-primary-foreground"
+                                : i === currentStep
+                                    ? "bg-primary text-primary-foreground ring-4 ring-primary/20"
+                                    : "bg-muted text-muted-foreground"
+                                }`}>
+                                {i < currentStep ? <Check className="h-4 w-4" /> : <step.icon className="h-4 w-4" />}
                             </div>
-                            {i < steps.length - 1 && (
-                                <div className={`h-0.5 flex-1 rounded-full min-w-4 ${i < currentStep ? "bg-primary" : "bg-muted"
-                                    }`} />
-                            )}
+                            <span className={`text-[10px] font-medium ${i <= currentStep ? "text-foreground" : "text-muted-foreground"
+                                }`}>{step.label}</span>
                         </div>
                     ))}
                 </div>
@@ -69,20 +67,16 @@ export function Form02() {
                     {currentStep === 0 && (
                         <>
                             <div className="space-y-2">
-                                <Label className="text-sm font-medium">First Name</Label>
-                                <Input className="h-11" placeholder="John" defaultValue="John" />
+                                <Label className="text-sm font-medium">Field Label 1</Label>
+                                <Input className="h-11" placeholder="Placeholder text" />
                             </div>
                             <div className="space-y-2">
-                                <Label className="text-sm font-medium">Last Name</Label>
-                                <Input className="h-11" placeholder="Doe" defaultValue="Doe" />
+                                <Label className="text-sm font-medium">Field Label 2</Label>
+                                <Input className="h-11" placeholder="Placeholder text" />
                             </div>
                             <div className="space-y-2">
-                                <Label className="text-sm font-medium">Email</Label>
-                                <Input className="h-11" type="email" placeholder="john@example.com" defaultValue="john@example.com" />
-                            </div>
-                            <div className="space-y-2">
-                                <Label className="text-sm font-medium">Date of Birth</Label>
-                                <Input className="h-11" type="date" defaultValue="1990-01-15" />
+                                <Label className="text-sm font-medium">Email Field</Label>
+                                <Input className="h-11" type="email" placeholder="user@example.com" />
                             </div>
                         </>
                     )}
@@ -90,35 +84,21 @@ export function Form02() {
                     {currentStep === 1 && (
                         <>
                             <div className="space-y-2">
-                                <Label className="text-sm font-medium">Street Address</Label>
-                                <Input className="h-11" placeholder="123 Sheikh Zayed Road" defaultValue="123 Sheikh Zayed Road" />
+                                <Label className="text-sm font-medium">Selection Label</Label>
+                                <Select defaultValue="option-1">
+                                    <SelectTrigger className="h-11">
+                                        <SelectValue />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="option-1">Option 1</SelectItem>
+                                        <SelectItem value="option-2">Option 2</SelectItem>
+                                        <SelectItem value="option-3">Option 3</SelectItem>
+                                    </SelectContent>
+                                </Select>
                             </div>
                             <div className="space-y-2">
-                                <Label className="text-sm font-medium">Apartment / Suite</Label>
-                                <Input className="h-11" placeholder="Apt 4B" defaultValue="Apt 4B" />
-                            </div>
-                            <div className="grid grid-cols-2 gap-3">
-                                <div className="space-y-2">
-                                    <Label className="text-sm font-medium">City</Label>
-                                    <Input className="h-11" placeholder="Dubai" defaultValue="Dubai" />
-                                </div>
-                                <div className="space-y-2">
-                                    <Label className="text-sm font-medium">State</Label>
-                                    <Select defaultValue="ny">
-                                        <SelectTrigger className="h-11">
-                                            <SelectValue />
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectItem value="ny">Dubai</SelectItem>
-                                            <SelectItem value="ca">California</SelectItem>
-                                            <SelectItem value="tx">Texas</SelectItem>
-                                        </SelectContent>
-                                    </Select>
-                                </div>
-                            </div>
-                            <div className="space-y-2">
-                                <Label className="text-sm font-medium">ZIP Code</Label>
-                                <Input className="h-11" placeholder="10001" defaultValue="10001" />
+                                <Label className="text-sm font-medium">Text Field</Label>
+                                <Input className="h-11" placeholder="Additional info" />
                             </div>
                         </>
                     )}
@@ -126,41 +106,23 @@ export function Form02() {
                     {currentStep === 2 && (
                         <>
                             <div className="rounded-xl border p-4 space-y-3">
-                                <h3 className="text-sm font-semibold">Personal Information</h3>
+                                <h3 className="text-sm font-semibold">Summary Section</h3>
                                 <div className="space-y-2 text-sm">
                                     <div className="flex justify-between">
-                                        <span className="text-muted-foreground">Name</span>
-                                        <span className="font-medium">Khalid Al Maktoum</span>
+                                        <span className="text-muted-foreground">Detail 1</span>
+                                        <span className="font-medium">Value 1</span>
                                     </div>
                                     <div className="flex justify-between">
-                                        <span className="text-muted-foreground">Email</span>
-                                        <span className="font-medium">john@example.com</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-muted-foreground">DOB</span>
-                                        <span className="font-medium">Jan 15, 1990</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="rounded-xl border p-4 space-y-3">
-                                <h3 className="text-sm font-semibold">Address</h3>
-                                <div className="space-y-2 text-sm">
-                                    <div className="flex justify-between">
-                                        <span className="text-muted-foreground">Street</span>
-                                        <span className="font-medium">123 Main St, Apt 4B</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-muted-foreground">City</span>
-                                        <span className="font-medium">Dubai, Dubai, UAE</span>
+                                        <span className="text-muted-foreground">Detail 2</span>
+                                        <span className="font-medium">Value 2</span>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-2 pt-2">
-                                <Checkbox id="terms" />
-                                <Label htmlFor="terms" className="text-sm text-muted-foreground font-normal leading-relaxed cursor-pointer">
-                                    I agree to the Terms of Service and Privacy Policy. I understand my data will be processed securely.
+                                <Checkbox id="consent" />
+                                <Label htmlFor="consent" className="text-sm text-muted-foreground font-normal leading-relaxed cursor-pointer">
+                                    I agree to the terms and conditions. I understand how my data will be used.
                                 </Label>
                             </div>
                         </>

@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { MobileFrame } from "@/components/mobile/mobile-frame";
 import { Check, Copy, Terminal } from "lucide-react";
+import type { Theme } from "@/components/blocks-layout";
 
 interface BlockViewerProps {
     name: string;
@@ -15,7 +16,7 @@ interface BlockViewerProps {
     category: string;
     registryDependencies?: string[];
     code: string;
-    theme?: "dubai" | "new-york";
+    theme?: Theme;
 }
 
 export function BlockViewer({

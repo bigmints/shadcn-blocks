@@ -9,9 +9,9 @@ import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const places = [
-    { name: "Blue Bottle Coffee", type: "Café", distance: "0.2 mi", rating: "4.8" },
-    { name: "Whole Foods Market", type: "Grocery", distance: "0.5 mi", rating: "4.5" },
-    { name: "Al Barsha Park", type: "Park", distance: "0.8 mi", rating: "4.9" },
+    { name: "Nearby Place 1", type: "Type", distance: "0.2 mi", rating: "4.8" },
+    { name: "Nearby Place 2", type: "Type", distance: "0.5 mi", rating: "4.5" },
+    { name: "Nearby Place 3", type: "Type", distance: "0.8 mi", rating: "4.9" },
 ];
 
 export function Sheet01() {
@@ -47,8 +47,8 @@ export function Sheet01() {
                 <div className="px-5 pb-4">
                     <div className="flex items-start justify-between">
                         <div>
-                            <h2 className="text-lg font-bold">Blue Bottle Coffee</h2>
-                            <p className="text-xs text-muted-foreground mt-0.5">Café · 0.2 mi away</p>
+                            <h2 className="text-lg font-bold">Location Name</h2>
+                            <p className="text-xs text-muted-foreground mt-0.5">Category · 0.2 mi away</p>
                             <div className="flex items-center gap-1 mt-1.5">
                                 <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
                                 <span className="text-xs font-medium">4.8</span>

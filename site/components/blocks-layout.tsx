@@ -31,16 +31,15 @@ import {
     Filter,
     AlertCircle,
     CreditCard,
-    Smartphone,
     Layers,
     Github,
     Star,
-    Building2,
     ChevronsUpDown,
     Check,
     Sun,
     Moon,
     Home,
+    Rocket,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
@@ -119,36 +118,48 @@ const categories = [
             { name: "notification-01", title: "Push Notifications" },
         ],
     },
-];
-
-const themes = [
     {
-        value: "dubai" as const,
-        label: "Dubai",
-        description: "Warm gold & sand",
-        icon: Building2,
-    },
-    {
-        value: "new-york" as const,
-        label: "New York",
-        description: "Clean & minimal",
-        icon: Smartphone,
+        label: "Onboarding",
+        icon: Rocket,
+        items: [
+            { name: "splash-01", title: "Splash Screen" },
+            { name: "onboarding-01", title: "Onboarding Slider" },
+        ],
     },
 ];
 
-function ThemeSwitcherPopover({ theme }: { theme: "dubai" | "new-york" }) {
+export type Theme =
+    | "dubai"
+    | "new-york"
+    | "mumbai"
+    | "riyadh"
+    | "muscat"
+    | "beirut"
+    | "london"
+    | "giza"
+    | "paris";
+
+const themes: { value: Theme; label: string; description: string; image: string }[] = [
+    { value: "dubai", label: "Dubai", description: "Warm gold & sand", image: "/themes/dubai.png" },
+    { value: "new-york", label: "New York", description: "Clean & minimal", image: "/themes/new-york.png" },
+    { value: "mumbai", label: "Mumbai", description: "Monsoon teal & saffron", image: "/themes/mumbai.png" },
+    { value: "riyadh", label: "Riyadh", description: "Saudi green & gold", image: "/themes/riyadh.png" },
+    { value: "muscat", label: "Muscat", description: "Terracotta & incense", image: "/themes/muscat.png" },
+    { value: "beirut", label: "Beirut", description: "Mediterranean azure", image: "/themes/beirut.png" },
+    { value: "london", label: "London", description: "Fog slate & red", image: "/themes/london.png" },
+    { value: "giza", label: "Giza", description: "Pyramid ochre & sand", image: "/themes/giza.png" },
+    { value: "paris", label: "Paris", description: "Mauve & champagne", image: "/themes/paris.png" },
+];
+
+function ThemeSwitcherPopover({ theme }: { theme: Theme }) {
     const pathname = usePathname();
     const router = useRouter();
     const [open, setOpen] = useState(false);
 
     const current = themes.find((t) => t.value === theme)!;
-    const CurrentIcon = current.icon;
 
-    const switchTo = (target: "dubai" | "new-york") => {
-        if (target === theme) {
-            setOpen(false);
-            return;
-        }
+    const switchTo = (target: Theme) => {
+        if (target === theme) { setOpen(false); return; }
         const newPath = pathname.replace(`/${theme}/`, `/${target}/`);
         router.push(newPath);
         setOpen(false);
@@ -161,8 +172,8 @@ function ThemeSwitcherPopover({ theme }: { theme: "dubai" | "new-york" }) {
                     size="lg"
                     className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                 >
-                    <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                        <CurrentIcon className="size-4" />
+                    <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground overflow-hidden">
+                        <img src={current.image} alt={current.label} className="size-full object-cover" />
                     </div>
                     <div className="grid flex-1 text-left text-sm leading-tight">
                         <span className="truncate font-semibold">{current.label}</span>
@@ -179,20 +190,17 @@ function ThemeSwitcherPopover({ theme }: { theme: "dubai" | "new-york" }) {
             >
                 <div className="flex flex-col gap-0.5">
                     {themes.map((t) => {
-                        const Icon = t.icon;
                         const isActive = t.value === theme;
                         return (
                             <button
                                 key={t.value}
                                 onClick={() => switchTo(t.value)}
-                                className={`flex items-center gap-3 rounded-md px-2 py-2 text-sm transition-colors ${isActive
-                                    ? "bg-accent text-accent-foreground"
-                                    : "hover:bg-accent/50 text-foreground"
+                                className={`flex items-center gap-3 rounded-md px-2 py-2 text-sm transition-colors ${isActive ? "bg-accent text-accent-foreground" : "hover:bg-accent/50 text-foreground"
                                     }`}
                             >
-                                <div className={`flex size-8 items-center justify-center rounded-md border ${isActive ? "bg-primary text-primary-foreground border-primary" : "bg-background"
+                                <div className={`flex size-8 items-center justify-center rounded-md border overflow-hidden ${isActive ? "bg-primary text-primary-foreground border-primary" : "bg-background"
                                     }`}>
-                                    <Icon className="size-4" />
+                                    <img src={t.image} alt={t.label} className="size-full object-cover" />
                                 </div>
                                 <div className="flex-1 text-left">
                                     <div className="font-medium">{t.label}</div>
@@ -208,7 +216,7 @@ function ThemeSwitcherPopover({ theme }: { theme: "dubai" | "new-york" }) {
     );
 }
 
-function AppSidebar({ theme }: { theme: "dubai" | "new-york" }) {
+function AppSidebar({ theme }: { theme: Theme }) {
     const pathname = usePathname();
 
     return (
@@ -329,7 +337,7 @@ function GitHubStars() {
     );
 }
 
-export function BlocksLayout({ children, theme = "dubai" }: { children: React.ReactNode; theme?: "dubai" | "new-york" }) {
+export function BlocksLayout({ children, theme = "dubai" }: { children: React.ReactNode; theme?: Theme }) {
     // Set data-theme on <html> so ALL elements (including portals) inherit theme
     useEffect(() => {
         document.documentElement.setAttribute("data-theme", theme);

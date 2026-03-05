@@ -3,8 +3,19 @@ import path from "path";
 import { notFound } from "next/navigation";
 import { BlockViewerPage } from "./block-viewer-page";
 import registryData from "@/registry.json";
+import type { Theme } from "@/components/blocks-layout";
 
-const VALID_THEMES = ["dubai", "new-york"] as const;
+const VALID_THEMES = [
+    "dubai",
+    "new-york",
+    "mumbai",
+    "riyadh",
+    "muscat",
+    "beirut",
+    "london",
+    "giza",
+    "paris",
+] as const;
 
 interface BlockMeta {
     name: string;
@@ -42,7 +53,7 @@ export default async function BlockPage({
 }) {
     const { theme, slug } = await params;
 
-    if (!VALID_THEMES.includes(theme as typeof VALID_THEMES[number])) {
+    if (!VALID_THEMES.includes(theme as Theme)) {
         notFound();
     }
 
@@ -71,6 +82,6 @@ export default async function BlockPage({
         code = code.replaceAll("@/registry/dubai/", `@/registry/${theme}/`);
     }
 
-    return <BlockViewerPage meta={meta} code={code} theme={theme as "dubai" | "new-york"} />;
+    return <BlockViewerPage meta={meta} code={code} theme={theme as Theme} />;
 }
 

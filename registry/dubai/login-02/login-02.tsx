@@ -66,13 +66,13 @@ export function Login02() {
                                 <Label className="text-sm font-medium">Phone Number</Label>
                                 <div className="flex gap-2">
                                     <Button variant="outline" className="h-11 px-3 gap-1.5 shrink-0 w-24">
-                                        <span className="text-base">🇺🇸</span>
-                                        <span className="text-sm">+1</span>
+                                        <span className="text-base">🌍</span>
+                                        <span className="text-sm">+00</span>
                                         <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />
                                     </Button>
                                     <Input
                                         type="tel"
-                                        placeholder="04 000-0000"
+                                        placeholder="00 000-0000"
                                         className="h-11 flex-1"
                                     />
                                 </div>
@@ -101,7 +101,7 @@ export function Login02() {
                         <div className="mb-8">
                             <h1 className="text-2xl font-bold tracking-tight">Verify your phone</h1>
                             <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-                                Enter the 6-digit code sent to <span className="font-medium text-foreground">+971 04 000-0000</span>
+                                Enter the verification code sent to <span className="font-medium text-foreground">your number</span>
                             </p>
                         </div>
 

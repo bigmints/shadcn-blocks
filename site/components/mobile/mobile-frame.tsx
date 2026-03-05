@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
+import type { Theme } from "@/components/blocks-layout";
 
 interface MobileFrameProps {
     slug: string;
     className?: string;
-    theme?: "dubai" | "new-york";
+    theme?: Theme;
 }
 
 export function MobileFrame({ slug, className, theme = "dubai" }: MobileFrameProps) {
@@ -18,7 +19,7 @@ export function MobileFrame({ slug, className, theme = "dubai" }: MobileFramePro
             <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[120px] h-[34px] bg-zinc-900 rounded-full z-20" />
 
             {/* Home indicator */}
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20">
                 <div className="w-32 h-1 bg-zinc-900 rounded-full" />
             </div>
 

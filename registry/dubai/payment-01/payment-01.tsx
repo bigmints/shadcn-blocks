@@ -11,7 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 
 export function Payment01() {
-    const [cardNumber, setCardNumber] = useState("4242 4242 4242 ");
+    const [cardNumber, setCardNumber] = useState("");
     const [cardError, setCardError] = useState("");
 
     const formatCardNumber = (value: string) => {
@@ -62,7 +62,7 @@ export function Payment01() {
                                 <div className="flex justify-between mt-3">
                                     <div>
                                         <p className="text-[10px] text-white/50 uppercase">Card Holder</p>
-                                        <p className="text-xs font-medium">Khalid Al Maktoum</p>
+                                        <p className="text-xs font-medium">Name on Card</p>
                                     </div>
                                     <div>
                                         <p className="text-[10px] text-white/50 uppercase">Expires</p>
@@ -110,7 +110,7 @@ export function Payment01() {
 
                         <div className="space-y-2">
                             <Label className="text-sm font-medium">Cardholder Name</Label>
-                            <Input placeholder="Name on card" className="h-11" defaultValue="Khalid Al Maktoum" />
+                            <Input placeholder="Name on card" className="h-11" />
                         </div>
 
                         <Separator />
@@ -129,7 +129,7 @@ export function Payment01() {
             <div className="border-t px-6 py-4 pb-8">
                 <Button className="w-full h-12 font-semibold text-base gap-2">
                     <Lock className="h-4 w-4" />
-                    Pay AED 918
+                    Pay Amount
                 </Button>
                 <p className="text-[10px] text-muted-foreground text-center mt-2">
                     Secured by 256-bit SSL encryption

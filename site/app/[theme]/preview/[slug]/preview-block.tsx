@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import type { Theme } from "@/components/blocks-layout";
 
 const blockComponents: Record<string, ReturnType<typeof dynamic>> = {
     "shell-01": dynamic(() => import("@/registry/dubai/shell-01/shell-01").then((m) => ({ default: m.Shell01 }))),
@@ -27,10 +28,12 @@ const blockComponents: Record<string, ReturnType<typeof dynamic>> = {
     "sheet-01": dynamic(() => import("@/registry/dubai/sheet-01/sheet-01").then((m) => ({ default: m.Sheet01 }))),
     "modal-01": dynamic(() => import("@/registry/dubai/modal-01/modal-01").then((m) => ({ default: m.Modal01 }))),
     "notification-01": dynamic(() => import("@/registry/dubai/notification-01/notification-01").then((m) => ({ default: m.Notification01 }))),
+    "splash-01": dynamic(() => import("@/registry/dubai/splash-01/splash-01").then((m) => ({ default: m.Splash01 }))),
+    "onboarding-01": dynamic(() => import("@/registry/dubai/onboarding-01/onboarding-01").then((m) => ({ default: m.Onboarding01 }))),
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function PreviewBlock({ slug, theme: _theme }: { slug: string; theme: "dubai" | "new-york" }) {
+export function PreviewBlock({ slug, theme: _theme }: { slug: string; theme: Theme }) {
     const BlockComponent = blockComponents[slug];
 
     if (!BlockComponent) {

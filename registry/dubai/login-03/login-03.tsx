@@ -29,10 +29,10 @@ export function Login03() {
                 {/* Avatar & Greeting */}
                 <Avatar className="h-20 w-20 mb-4">
                     <AvatarFallback className="bg-primary text-primary-foreground text-2xl font-semibold">
-                        JD
+                        XX
                     </AvatarFallback>
                 </Avatar>
-                <h1 className="text-lg font-semibold">Welcome back, John</h1>
+                <h1 className="text-lg font-semibold">Welcome back, User</h1>
                 <p className="text-sm text-muted-foreground mt-1">Enter your PIN to continue</p>
 
                 {/* PIN Dots */}
@@ -41,8 +41,8 @@ export function Login03() {
                         <div
                             key={i}
                             className={`w-4 h-4 rounded-full transition-all duration-200 ${i < pin.length
-                                    ? "bg-primary scale-110"
-                                    : "border-2 border-muted-foreground/30"
+                                ? "bg-primary scale-110"
+                                : "border-2 border-muted-foreground/30"
                                 }`}
                         />
                     ))}
@@ -56,7 +56,7 @@ export function Login03() {
                 <div className="flex items-center gap-3 mt-6 mb-2">
                     <Fingerprint className="h-5 w-5 text-muted-foreground" />
                     <Label htmlFor="biometric" className="text-sm text-muted-foreground cursor-pointer">
-                        Use Face ID
+                        Biometric Auth
                     </Label>
                     <Switch id="biometric" checked={useBiometric} onCheckedChange={setUseBiometric} />
                 </div>
@@ -73,10 +73,10 @@ export function Login03() {
                                 else if (key !== "") handleKeyPress(key);
                             }}
                             className={`h-16 rounded-2xl flex items-center justify-center text-xl font-medium transition-all active:scale-95 ${key === ""
-                                    ? "invisible"
-                                    : key === "del"
-                                        ? "text-muted-foreground hover:bg-muted"
-                                        : "bg-muted/60 hover:bg-muted active:bg-muted"
+                                ? "invisible"
+                                : key === "del"
+                                    ? "text-muted-foreground hover:bg-muted"
+                                    : "bg-muted/60 hover:bg-muted active:bg-muted"
                                 }`}
                         >
                             {key === "del" ? (

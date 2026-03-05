@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import registryData from "@/registry.json";
-import { Building2, Smartphone, Terminal, Blocks } from "lucide-react";
+import { Terminal, Blocks } from "lucide-react";
 
 const categoryLabels: Record<string, string> = {
     shells: "App Shells",
@@ -13,26 +13,20 @@ const categoryLabels: Record<string, string> = {
     status: "Status Pages",
     payment: "Payment",
     overlays: "Overlays",
+    onboarding: "Onboarding",
 };
 
-const themeDetails = {
-    dubai: {
-        icon: Building2,
-        label: "Dubai",
-        shortDescription: "Warm gold & sand",
-        iconBg: "bg-amber-600 text-white",
-        description:
-            "Warm gold & sand palette inspired by Dubai's luxury aesthetic — amber primaries, pearl backgrounds, and rich Arabian espresso tones.",
-    },
-    "new-york": {
-        icon: Smartphone,
-        label: "New York",
-        shortDescription: "Clean & minimal",
-        iconBg: "bg-zinc-900 text-white",
-        description:
-            "Clean, minimal zinc palette — pure white backgrounds, crisp borders, and neutral dark primaries for a modern metropolitan feel.",
-    },
-};
+const themeDetails = [
+    { key: "dubai", image: "/themes/dubai.png", label: "Dubai", shortDescription: "Warm gold & sand" },
+    { key: "new-york", image: "/themes/new-york.png", label: "New York", shortDescription: "Clean & minimal" },
+    { key: "mumbai", image: "/themes/mumbai.png", label: "Mumbai", shortDescription: "Monsoon teal" },
+    { key: "riyadh", image: "/themes/riyadh.png", label: "Riyadh", shortDescription: "Saudi green & gold" },
+    { key: "muscat", image: "/themes/muscat.png", label: "Muscat", shortDescription: "Terracotta & incense" },
+    { key: "beirut", image: "/themes/beirut.png", label: "Beirut", shortDescription: "Mediterranean azure" },
+    { key: "london", image: "/themes/london.png", label: "London", shortDescription: "Fog slate & red" },
+    { key: "giza", image: "/themes/giza.png", label: "Giza", shortDescription: "Pyramid ochre & sand" },
+    { key: "paris", image: "/themes/paris.png", label: "Paris", shortDescription: "Mauve & champagne" },
+];
 
 export default async function BlocksIndex({
     params,
@@ -104,38 +98,35 @@ export default async function BlocksIndex({
                         <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-3">
                             Choose your style
                         </p>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md">
-                            {(Object.entries(themeDetails) as [string, typeof themeDetails["dubai"]][]).map(
-                                ([key, t]) => {
-                                    const Icon = t.icon;
-                                    const isActive = key === theme;
-                                    return (
-                                        <Link key={key} href={`/${key}/blocks`}>
-                                            <div
-                                                className={`flex items-center gap-3 rounded-xl border p-3.5 transition-all cursor-pointer ${isActive
-                                                    ? "border-primary bg-primary/5 shadow-sm"
-                                                    : "border-transparent bg-muted/40 hover:bg-muted/70"
-                                                    }`}
-                                            >
-                                                <div className={`flex size-10 shrink-0 items-center justify-center rounded-lg ${t.iconBg}`}>
-                                                    <Icon className="size-5" />
-                                                </div>
-                                                <div className="min-w-0 flex-1">
-                                                    <div className="flex items-center gap-2">
-                                                        <span className="text-sm font-semibold">{t.label}</span>
-                                                        {isActive && (
-                                                            <span className="size-2 rounded-full bg-primary" />
-                                                        )}
-                                                    </div>
-                                                    <p className="text-xs text-muted-foreground mt-0.5">
-                                                        {t.shortDescription}
-                                                    </p>
-                                                </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-w-2xl">
+                            {themeDetails.map((t) => {
+                                const isActive = t.key === theme;
+                                return (
+                                    <Link key={t.key} href={`/${t.key}/blocks`}>
+                                        <div
+                                            className={`flex items-center gap-2.5 rounded-xl border p-3 transition-all cursor-pointer ${isActive
+                                                ? "border-primary bg-primary/5 shadow-sm"
+                                                : "border-transparent bg-muted/40 hover:bg-muted/70"
+                                                }`}
+                                        >
+                                            <div className="size-8 rounded-lg overflow-hidden border shrink-0">
+                                                <img src={t.image} alt={t.label} className="size-full object-cover" />
                                             </div>
-                                        </Link>
-                                    );
-                                }
-                            )}
+                                            <div className="min-w-0 flex-1">
+                                                <div className="flex items-center gap-1.5">
+                                                    <span className="text-sm font-semibold truncate">{t.label}</span>
+                                                    {isActive && (
+                                                        <span className="size-1.5 rounded-full bg-primary shrink-0" />
+                                                    )}
+                                                </div>
+                                                <p className="text-[11px] text-muted-foreground mt-0.5 truncate">
+                                                    {t.shortDescription}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>

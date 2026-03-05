@@ -52,23 +52,23 @@ export function Modal01() {
                                 <div className="w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center mx-auto mb-3">
                                     <AlertTriangle className="h-6 w-6 text-destructive" />
                                 </div>
-                                <h3 className="font-semibold text-base">Delete Item?</h3>
+                                <h3 className="font-semibold text-base">Alert Title</h3>
                                 <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">
                                     This action cannot be undone.
                                 </p>
                             </div>
                             <div className="border-t divide-x flex">
                                 <button className="flex-1 py-3 text-sm font-medium text-primary" onClick={() => setShowModal(false)}>Cancel</button>
-                                <button className="flex-1 py-3 text-sm font-semibold text-destructive" onClick={() => setShowModal(false)}>Delete</button>
+                                <button className="flex-1 py-3 text-sm font-semibold text-destructive" onClick={() => setShowModal(false)}>Confirm</button>
                             </div>
                         </div>
                     ) : (
                         <div className="absolute bottom-4 left-3 right-3 z-10 animate-in slide-in-from-bottom-4 duration-300">
                             <div className="bg-background/95 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl">
                                 {[
-                                    { label: "Share", icon: Share, color: "text-foreground" },
-                                    { label: "Save to Favorites", icon: Heart, color: "text-foreground" },
-                                    { label: "Delete", icon: Trash2, color: "text-destructive" },
+                                    { label: "Action 1", icon: Share, color: "text-foreground" },
+                                    { label: "Action 2", icon: Heart, color: "text-foreground" },
+                                    { label: "Destructive Action", icon: Trash2, color: "text-destructive" },
                                 ].map((action) => (
                                     <button
                                         key={action.label}
